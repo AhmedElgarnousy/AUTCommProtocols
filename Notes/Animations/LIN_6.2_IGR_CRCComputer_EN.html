@@ -1,0 +1,3233 @@
+<!DOCTYPE html>
+<!-- saved from url=(0120)http://automotive.imtschool.com/02-%20Automotive%20Communications/04-%20LIN%20Communication/03-%20Animation/LIN_CRC.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>LIN_6.2_IGR_CRCComputer_EN</title>
+<style>
+	html, body{
+		background-color:#FFF;
+	}
+</style>
+<!-- write your code here -->
+<script src="./LIN_6.2_IGR_CRCComputer_EN_files/createjs.min.js.download"></script>
+<script>
+function LoadGFonts(families, comp) {				
+	var lib=comp.getLibrary();				
+	var googleObject = {type: "Google", loadedFonts: 0, totalFonts: families.length, callOnLoad: lib.gfontAvailable};				
+	for(var i =0; i < families.length; i++)				
+		isFontAvailable(gFontsFamilies[i], googleObject);				
+}
+function isFontAvailable(font, obj) {				
+	var timeOut = 5000;				
+	var delay = 200;				
+	var interval = 0;				
+	var timeElapsed = 0;				
+	function checkFont() {				
+		var node = document.createElement("span");				
+		node.innerHTML = "giItT1WQy@!-/#";				
+		node.style.position      = "absolute";				
+		node.style.left          = "-1000px";				
+		node.style.top           = "-1000px";				
+		node.style.fontSize      = "300px";				
+		node.style.fontFamily    = "sans-serif";				
+		node.style.fontVariant   = "normal";				
+		node.style.fontStyle     = "normal";				
+		node.style.fontWeight    = "normal";				
+		node.style.letterSpacing = "0";				
+		document.body.appendChild(node);				
+		var width = node.offsetWidth;				
+		node.style.fontFamily = font+","+node.style.fontFamily;				
+		var returnVal = false;				
+		if((node && node.offsetWidth != width) || timeElapsed >=timeOut) {				
+			obj.loadedFonts++;				
+			if(interval)				
+				clearInterval(interval);				
+			obj.callOnLoad(font, obj.totalFonts);				
+			returnVal = true;				
+		}				
+		if(node) {				
+			node.parentNode.removeChild(node);				
+			node = null;				
+		}				
+		timeElapsed += delay;				
+		return returnVal;				
+	}				
+	if(!checkFont()) {				
+		interval = setInterval(checkFont, delay);				
+	}				
+}
+</script>
+<script>
+	var gFontsFamilies = ["Roboto"];
+</script>
+<link rel="stylesheet" type="text/css" href="./LIN_6.2_IGR_CRCComputer_EN_files/css">
+<link rel="stylesheet" type="text/css" href="./LIN_6.2_IGR_CRCComputer_EN_files/css(1)">
+<script>
+(function (cjs, an) {
+var p; // shortcut to reference prototypes
+var lib={};var ss={};var img={};
+lib.webFontTxtInst = {}; 
+var loadedTypekitCount = 0;
+var loadedGoogleCount = 0;
+var gFontsUpdateCacheList = [];
+var tFontsUpdateCacheList = [];
+lib.ssMetadata = [];
+lib.updateListCache = function (cacheList) {		
+	for(var i = 0; i < cacheList.length; i++) {		
+		if(cacheList[i].cacheCanvas)		
+			cacheList[i].updateCache();		
+	}		
+};		
+lib.addElementsToCache = function (textInst, cacheList) {		
+	var cur = textInst;		
+	while(cur != null && cur != exportRoot) {		
+		if(cacheList.indexOf(cur) != -1)		
+			break;		
+		cur = cur.parent;		
+	}		
+	if(cur != exportRoot) {		
+		var cur2 = textInst;		
+		var index = cacheList.indexOf(cur);		
+		while(cur2 != null && cur2 != cur) {		
+			cacheList.splice(index, 0, cur2);		
+			cur2 = cur2.parent;		
+			index++;		
+		}		
+	}		
+	else {		
+		cur = textInst;		
+		while(cur != null && cur != exportRoot) {		
+			cacheList.push(cur);		
+			cur = cur.parent;		
+		}		
+	}		
+};		
+lib.gfontAvailable = function(family, totalGoogleCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+	loadedGoogleCount++;		
+	if(loadedGoogleCount == totalGoogleCount) {		
+		lib.updateListCache(gFontsUpdateCacheList);		
+	}		
+};		
+lib.tfontAvailable = function(family, totalTypekitCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+	loadedTypekitCount++;		
+	if(loadedTypekitCount == totalTypekitCount) {		
+		lib.updateListCache(tFontsUpdateCacheList);		
+	}		
+};
+// symbols:
+// helper functions:
+function mc_symbol_clone() {
+	var clone = this._cloneProps(new this.constructor(this.mode, this.startPosition, this.loop));
+	clone.gotoAndStop(this.currentFrame);
+	clone.paused = this.paused;
+	clone.framerate = this.framerate;
+	return clone;
+}
+function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
+	var prototype = cjs.extend(symbol, cjs.MovieClip);
+	prototype.clone = mc_symbol_clone;
+	prototype.nominalBounds = nominalBounds;
+	prototype.frameBounds = frameBounds;
+	return prototype;
+	}
+(lib.ÜbertragWindow = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Text
+	this.summand_first_txt = new cjs.Text("0", "normal 700 14px 'Roboto'", "#B70032");
+	this.summand_first_txt.name = "summand_first_txt";
+	this.summand_first_txt.textAlign = "center";
+	this.summand_first_txt.lineHeight = 21;
+	this.summand_first_txt.lineWidth = 8;
+	this.summand_first_txt.parent = this;
+	this.summand_first_txt.setTransform(104,19);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_first_txt);
+	}
+	this.summand_1_7_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_7_txt.name = "summand_1_7_txt";
+	this.summand_1_7_txt.textAlign = "center";
+	this.summand_1_7_txt.lineHeight = 21;
+	this.summand_1_7_txt.lineWidth = 8;
+	this.summand_1_7_txt.parent = this;
+	this.summand_1_7_txt.setTransform(279.9,19);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_7_txt);
+	}
+	this.summand_1_6_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_6_txt.name = "summand_1_6_txt";
+	this.summand_1_6_txt.textAlign = "center";
+	this.summand_1_6_txt.lineHeight = 21;
+	this.summand_1_6_txt.lineWidth = 8;
+	this.summand_1_6_txt.parent = this;
+	this.summand_1_6_txt.setTransform(257.9,19);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_6_txt);
+	}
+	this.summand_1_5_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_5_txt.name = "summand_1_5_txt";
+	this.summand_1_5_txt.textAlign = "center";
+	this.summand_1_5_txt.lineHeight = 21;
+	this.summand_1_5_txt.lineWidth = 8;
+	this.summand_1_5_txt.parent = this;
+	this.summand_1_5_txt.setTransform(235.9,19);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_5_txt);
+	}
+	this.summand_1_4_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_4_txt.name = "summand_1_4_txt";
+	this.summand_1_4_txt.textAlign = "center";
+	this.summand_1_4_txt.lineHeight = 21;
+	this.summand_1_4_txt.lineWidth = 8;
+	this.summand_1_4_txt.parent = this;
+	this.summand_1_4_txt.setTransform(213.9,19);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_4_txt);
+	}
+	this.summand_1_3_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_3_txt.name = "summand_1_3_txt";
+	this.summand_1_3_txt.textAlign = "center";
+	this.summand_1_3_txt.lineHeight = 21;
+	this.summand_1_3_txt.lineWidth = 8;
+	this.summand_1_3_txt.parent = this;
+	this.summand_1_3_txt.setTransform(191.9,19);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_3_txt);
+	}
+	this.summand_1_2_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_2_txt.name = "summand_1_2_txt";
+	this.summand_1_2_txt.textAlign = "center";
+	this.summand_1_2_txt.lineHeight = 21;
+	this.summand_1_2_txt.lineWidth = 8;
+	this.summand_1_2_txt.parent = this;
+	this.summand_1_2_txt.setTransform(169.9,19);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_2_txt);
+	}
+	this.summand_1_1_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_1_txt.name = "summand_1_1_txt";
+	this.summand_1_1_txt.textAlign = "center";
+	this.summand_1_1_txt.lineHeight = 21;
+	this.summand_1_1_txt.lineWidth = 8;
+	this.summand_1_1_txt.parent = this;
+	this.summand_1_1_txt.setTransform(147.9,19);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_1_txt);
+	}
+	this.summand_1_0_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_0_txt.name = "summand_1_0_txt";
+	this.summand_1_0_txt.textAlign = "center";
+	this.summand_1_0_txt.lineHeight = 21;
+	this.summand_1_0_txt.lineWidth = 8;
+	this.summand_1_0_txt.parent = this;
+	this.summand_1_0_txt.setTransform(125.9,19);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_0_txt);
+	}
+	this.summand_2_txt = new cjs.Text("Carry Bit:", "normal 400 14px 'Roboto'");
+	this.summand_2_txt.name = "summand_2_txt";
+	this.summand_2_txt.lineHeight = 21;
+	this.summand_2_txt.lineWidth = 71;
+	this.summand_2_txt.parent = this;
+	this.summand_2_txt.setTransform(7.2,40.55);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_2_txt);
+	}
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.summand_2_txt},{t:this.summand_1_0_txt},{t:this.summand_1_1_txt},{t:this.summand_1_2_txt},{t:this.summand_1_3_txt},{t:this.summand_1_4_txt},{t:this.summand_1_5_txt},{t:this.summand_1_6_txt},{t:this.summand_1_7_txt},{t:this.summand_first_txt}]}).wait(1));
+	// Ebene 1
+	this.übertrag_6_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_6_txt.name = "übertrag_6_txt";
+	this.übertrag_6_txt.textAlign = "center";
+	this.übertrag_6_txt.lineHeight = 15;
+	this.übertrag_6_txt.lineWidth = 8;
+	this.übertrag_6_txt.parent = this;
+	this.übertrag_6_txt.setTransform(257.9,61.85);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_6_txt);
+	}
+	this.übertrag_5_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_5_txt.name = "übertrag_5_txt";
+	this.übertrag_5_txt.textAlign = "center";
+	this.übertrag_5_txt.lineHeight = 15;
+	this.übertrag_5_txt.lineWidth = 8;
+	this.übertrag_5_txt.parent = this;
+	this.übertrag_5_txt.setTransform(235.9,61.85);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_5_txt);
+	}
+	this.übertrag_4_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_4_txt.name = "übertrag_4_txt";
+	this.übertrag_4_txt.textAlign = "center";
+	this.übertrag_4_txt.lineHeight = 15;
+	this.übertrag_4_txt.lineWidth = 8;
+	this.übertrag_4_txt.parent = this;
+	this.übertrag_4_txt.setTransform(213.9,61.85);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_4_txt);
+	}
+	this.übertrag_3_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_3_txt.name = "übertrag_3_txt";
+	this.übertrag_3_txt.textAlign = "center";
+	this.übertrag_3_txt.lineHeight = 15;
+	this.übertrag_3_txt.lineWidth = 8;
+	this.übertrag_3_txt.parent = this;
+	this.übertrag_3_txt.setTransform(191.9,61.85);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_3_txt);
+	}
+	this.übertrag_2_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_2_txt.name = "übertrag_2_txt";
+	this.übertrag_2_txt.textAlign = "center";
+	this.übertrag_2_txt.lineHeight = 15;
+	this.übertrag_2_txt.lineWidth = 8;
+	this.übertrag_2_txt.parent = this;
+	this.übertrag_2_txt.setTransform(169.9,61.85);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_2_txt);
+	}
+	this.übertrag_1_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_1_txt.name = "übertrag_1_txt";
+	this.übertrag_1_txt.textAlign = "center";
+	this.übertrag_1_txt.lineHeight = 15;
+	this.übertrag_1_txt.lineWidth = 8;
+	this.übertrag_1_txt.parent = this;
+	this.übertrag_1_txt.setTransform(147.9,61.85);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_1_txt);
+	}
+	this.übertrag_0_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_0_txt.name = "übertrag_0_txt";
+	this.übertrag_0_txt.textAlign = "center";
+	this.übertrag_0_txt.lineHeight = 15;
+	this.übertrag_0_txt.lineWidth = 8;
+	this.übertrag_0_txt.parent = this;
+	this.übertrag_0_txt.setTransform(125.9,61.85);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_0_txt);
+	}
+	this.übertrag_first_txt = new cjs.Text("0", "normal 700 14px 'Roboto'", "#B70032");
+	this.übertrag_first_txt.name = "übertrag_first_txt";
+	this.übertrag_first_txt.textAlign = "center";
+	this.übertrag_first_txt.lineHeight = 21;
+	this.übertrag_first_txt.lineWidth = 8;
+	this.übertrag_first_txt.parent = this;
+	this.übertrag_first_txt.setTransform(280,39.95);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_first_txt);
+	}
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#B70032").ss(1,1,1).p("AMeAsI47AAIAAhX");
+	this.shape.setTransform(184.025,42.625);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f().s("#848B8E").ss(1,1,1).p("AW8AAMgt3AAA");
+	this.shape_1.setTransform(146.75,75.2);
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f("#B70032").s().p("AgdABIAAgjIA7AiIg7Ajg");
+	this.shape_2.setTransform(266.85,47);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape},{t:this.übertrag_first_txt},{t:this.übertrag_0_txt},{t:this.übertrag_1_txt},{t:this.übertrag_2_txt},{t:this.übertrag_3_txt},{t:this.übertrag_4_txt},{t:this.übertrag_5_txt},{t:this.übertrag_6_txt}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.ÜbertragWindow, new cjs.Rectangle(-1,17,295.5,60.099999999999994), null);
+(lib.übertrag_arrow = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#565C5E").s().p("AgsgzIBZAzIhZA0g");
+	this.shape.setTransform(106.9765,3.4662,0.6703,0.6714);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f().s("#565C5E").ss(1,2,0,3).p("AjGAAIGNAA");
+	this.shape_1.setTransform(62.4883,3.6,2.0828,1);
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f().s("#565C5E").ss(1,2,0,3).p("AAAKMIAA0X");
+	this.shape_2.setTransform(20,199.7214,1,2.9916);
+	this.shape_3 = new cjs.Shape();
+	this.shape_3.graphics.f().s("#565C5E").ss(1,2,0,3).p("AjGAAIGNAA");
+	this.shape_3.setTransform(10.0177,396.35,0.5018,1);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.übertrag_arrow, new cjs.Rectangle(-1,0,111,397.4), null);
+(lib.number_arrow = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#565C5E").s().p("AgsgzIBZAzIhZA0g");
+	this.shape.setTransform(139.5765,3.4662,0.6703,0.6714);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f().s("#565C5E").ss(1,2,0,3).p("AjGAAIGNAA");
+	this.shape_1.setTransform(78.5889,3.6,2.9112,1);
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f().s("#565C5E").ss(1,2,0,3).p("AAAKMIAA0X");
+	this.shape_2.setTransform(20,199.7214,1,2.9916);
+	this.shape_3 = new cjs.Shape();
+	this.shape_3.graphics.f().s("#565C5E").ss(1,2,0,3).p("AjGAAIGNAA");
+	this.shape_3.setTransform(10.0177,396.35,0.5018,1);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.number_arrow, new cjs.Rectangle(-1,0,143.6,397.4), null);
+(lib.InterimWindow = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.summand_1_first_txt = new cjs.Text("0", "normal 700 14px 'Roboto'", "#B70032");
+	this.summand_1_first_txt.name = "summand_1_first_txt";
+	this.summand_1_first_txt.textAlign = "center";
+	this.summand_1_first_txt.lineHeight = 21;
+	this.summand_1_first_txt.lineWidth = 8;
+	this.summand_1_first_txt.parent = this;
+	this.summand_1_first_txt.setTransform(104,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_first_txt);
+	}
+	this.summand_1_7_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_7_txt.name = "summand_1_7_txt";
+	this.summand_1_7_txt.textAlign = "center";
+	this.summand_1_7_txt.lineHeight = 21;
+	this.summand_1_7_txt.lineWidth = 8;
+	this.summand_1_7_txt.parent = this;
+	this.summand_1_7_txt.setTransform(279.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_7_txt);
+	}
+	this.summand_1_6_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_6_txt.name = "summand_1_6_txt";
+	this.summand_1_6_txt.textAlign = "center";
+	this.summand_1_6_txt.lineHeight = 21;
+	this.summand_1_6_txt.lineWidth = 8;
+	this.summand_1_6_txt.parent = this;
+	this.summand_1_6_txt.setTransform(257.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_6_txt);
+	}
+	this.summand_1_5_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_5_txt.name = "summand_1_5_txt";
+	this.summand_1_5_txt.textAlign = "center";
+	this.summand_1_5_txt.lineHeight = 21;
+	this.summand_1_5_txt.lineWidth = 8;
+	this.summand_1_5_txt.parent = this;
+	this.summand_1_5_txt.setTransform(235.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_5_txt);
+	}
+	this.summand_1_4_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_4_txt.name = "summand_1_4_txt";
+	this.summand_1_4_txt.textAlign = "center";
+	this.summand_1_4_txt.lineHeight = 21;
+	this.summand_1_4_txt.lineWidth = 8;
+	this.summand_1_4_txt.parent = this;
+	this.summand_1_4_txt.setTransform(213.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_4_txt);
+	}
+	this.summand_1_3_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_3_txt.name = "summand_1_3_txt";
+	this.summand_1_3_txt.textAlign = "center";
+	this.summand_1_3_txt.lineHeight = 21;
+	this.summand_1_3_txt.lineWidth = 8;
+	this.summand_1_3_txt.parent = this;
+	this.summand_1_3_txt.setTransform(191.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_3_txt);
+	}
+	this.summand_1_2_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_2_txt.name = "summand_1_2_txt";
+	this.summand_1_2_txt.textAlign = "center";
+	this.summand_1_2_txt.lineHeight = 21;
+	this.summand_1_2_txt.lineWidth = 8;
+	this.summand_1_2_txt.parent = this;
+	this.summand_1_2_txt.setTransform(169.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_2_txt);
+	}
+	this.summand_1_1_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_1_txt.name = "summand_1_1_txt";
+	this.summand_1_1_txt.textAlign = "center";
+	this.summand_1_1_txt.lineHeight = 21;
+	this.summand_1_1_txt.lineWidth = 8;
+	this.summand_1_1_txt.parent = this;
+	this.summand_1_1_txt.setTransform(147.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_1_txt);
+	}
+	this.summand_1_0_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_0_txt.name = "summand_1_0_txt";
+	this.summand_1_0_txt.textAlign = "center";
+	this.summand_1_0_txt.lineHeight = 21;
+	this.summand_1_0_txt.lineWidth = 8;
+	this.summand_1_0_txt.parent = this;
+	this.summand_1_0_txt.setTransform(125.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_0_txt);
+	}
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.summand_1_0_txt},{t:this.summand_1_1_txt},{t:this.summand_1_2_txt},{t:this.summand_1_3_txt},{t:this.summand_1_4_txt},{t:this.summand_1_5_txt},{t:this.summand_1_6_txt},{t:this.summand_1_7_txt},{t:this.summand_1_first_txt}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.InterimWindow, new cjs.Rectangle(98,18.8,187.89999999999998,22.599999999999998), null);
+(lib.hex_point = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#848B8E").ss(1,1,1).p("ABGAAQAAAdgVAVQgUAUgdAAQgcAAgVgUQgVgVAAgdQAAgcAVgVQAVgUAcAAQAdAAAUAUQAVAVAAAcg");
+	this.shape.setTransform(7.05,7.05);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#FFFFFF").s().p("AgxAyQgVgVABgdQgBgcAVgVQAVgUAcAAQAdAAAUAUQAWAVAAAcQAAAdgWAVQgUAVgdgBQgcABgVgVg");
+	this.shape_1.setTransform(7.05,7.05);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.hex_point, new cjs.Rectangle(-1,-1,16.1,16.1), null);
+(lib.titlebar_output_small_mc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#848B8E").ss(1,1,1).p("AYOBkMgwbAAAIAAjHMAwbAAAg");
+	this.shape.setTransform(155,10);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#B70032").s().p("A4NBkIAAjHMAwbAAAIAADHg");
+	this.shape_1.setTransform(155,10);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.titlebar_output_small_mc, new cjs.Rectangle(-1,-1,312,22), null);
+(lib.titlebar_output_mc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#848B8E").ss(1,1,1).p("EBMkABkMiZHAAAIAAjHMCZHAAAg");
+	this.shape.setTransform(490,10);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#B70032").s().p("EhMjABkIAAjHMCZHAAAIAADHg");
+	this.shape_1.setTransform(490,10);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.titlebar_output_mc, new cjs.Rectangle(-1,-1,982,22), null);
+(lib.titlebar_input_mc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#848B8E").ss(1,1,1).p("EAzkABkMhnHAAAIAAjHMBnHAAAg");
+	this.shape.setTransform(330,10);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#B70032").s().p("EgzjABkIAAjHMBnHAAAIAADHg");
+	this.shape_1.setTransform(330,10);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.titlebar_input_mc, new cjs.Rectangle(-1,-1,662,22), null);
+(lib.farbe_mc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#B70032").s().p("ApXDIIAAmPISvAAIAAGPg");
+	this.shape.setTransform(60,20);
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.farbe_mc, new cjs.Rectangle(0,0,120,40), null);
+(lib.anleitung_transparent = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#FFFFFF").s().p("EhRPA8KMAAAh4TMCifAAAMAAAB4Tg");
+	this.shape.setTransform(520,385);
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.anleitung_transparent, new cjs.Rectangle(0,0,1040,770), null);
+(lib.anleitung_close_btn = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// timeline functions:
+	this.frame_0 = function() {
+		this.stop();
+	}
+	this.frame_1 = function() {
+		/* stop();*/
+	}
+	this.frame_2 = function() {
+		/* stop();*/
+	}
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1).call(this.frame_2).wait(1));
+	// active
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("rgba(7,7,7,0.008)").s().p("Ah8B9IAAj5ID5AAIAAD5g");
+	this.shape.setTransform(12.5,12.5);
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(3));
+	// Ebene 3
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f().s("#000000").ss(1,0,0,4).p("AAAh8IAAD5");
+	this.shape_1.setTransform(0,12.5);
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f("#FFFFFF").s().p("AAmA8IgmgyIgnAyIgUAAIAxg7Igwg8IAWAAIAlAxIAmgxIAVAAIgxA7IAxA8g");
+	this.shape_2.setTransform(12,13);
+	this.shape_3 = new cjs.Shape();
+	this.shape_3.graphics.f("#000000").s().p("AAmA8IgmgyIgnAyIgUAAIAxg7Igwg8IAWAAIAlAxIAmgxIAVAAIgxA7IAxA8g");
+	this.shape_3.setTransform(12,13);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1}]}).to({state:[{t:this.shape_3},{t:this.shape_1}]},1).to({state:[{t:this.shape_2},{t:this.shape_1}]},1).wait(1));
+	this._renderFirstFrame();
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-1,-1,26,27);
+(lib.Reset_EN = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Text
+	this.text = new cjs.Text("Reset", "normal 400 12px 'Roboto'", "#848B8E");
+	this.text.textAlign = "center";
+	this.text.lineHeight = 16;
+	this.text.lineWidth = 76;
+	this.text.parent = this;
+	this.text.setTransform(11,42);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text);
+	}
+	this.text._off = true;
+	this.timeline.addTween(cjs.Tween.get(this.text).wait(1).to({_off:false},0).to({_off:true},2).wait(1));
+	// reset.ai
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#848B8E").s().p("AhpAYIBaAAIgiAjQAWARAbAAQAhAAAXgYQAYgYAAgfQAAgigYgYQgXgXghAAQgdAAgXATQgXAUgEAcQgBAHgFADQgFAEgGgBQgHgBgDgFQgEgFABgGQAGgoAggbQAfgaAoAAQAtAAAhAgQAgAhAAAuQAAAsggAgQghAhgtAAQgoAAgegaIgjAjg");
+	this.shape.setTransform(10.9889,11.5);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#B70032").s().p("AhpAYIBaAAIgiAjQAWARAbAAQAhAAAXgYQAYgYAAgfQAAgigYgYQgXgXghAAQgdAAgXATQgXAUgEAcQgBAHgFADQgFAEgGgBQgHgBgDgFQgEgFABgGQAGgoAggbQAfgaAoAAQAtAAAhAgQAgAhAAAuQAAAsggAgQghAhgtAAQgoAAgegaIgjAjg");
+	this.shape_1.setTransform(10.9889,11.5);
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f("#000000").s().p("AhpAYIBaAAIgiAjQAWARAbAAQAhAAAXgYQAYgYAAgfQAAgigYgYQgXgXghAAQgdAAgXATQgXAUgEAcQgBAHgFADQgFAEgGgBQgHgBgDgFQgEgFABgGQAGgoAggbQAfgaAoAAQAtAAAhAgQAgAhAAAuQAAAsggAgQghAhgtAAQgoAAgegaIgjAjg");
+	this.shape_2.setTransform(10.9889,11.5);
+	this.shape_3 = new cjs.Shape();
+	this.shape_3.graphics.f("#565C5E").s().p("AiRCZIAAkxIEjAAIAAExg");
+	this.shape_3.setTransform(10.9995,11.5036,0.7551,0.7516);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).to({state:[{t:this.shape_2}]},1).to({state:[{t:this.shape_3}]},1).wait(1));
+	this._renderFirstFrame();
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-29,0,80,65);
+(lib.Instructions_EN = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Text
+	this.text = new cjs.Text("Instructions", "normal 400 12px 'Roboto'", "#848B8E");
+	this.text.textAlign = "right";
+	this.text.lineHeight = 18;
+	this.text.lineWidth = 76;
+	this.text.parent = this;
+	this.text.setTransform(11,42);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text);
+	}
+	this.text._off = true;
+	this.timeline.addTween(cjs.Tween.get(this.text).wait(1).to({_off:false},0).to({_off:true},2).wait(1));
+	// help.ai
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#848B8E").s().p("AgLBoQgGgFAAgHQAAgJAGgFQAFgGAIAAQAIAAAFAGQAGAFAAAJQAAAHgGAFQgFAGgIAAQgIAAgFgGgAABA+QgIAAgEgGQgFgFABgJQADgTANgUIARgZQAJgNACgHQACgOgIgJQgGgJgPgBQgWgBgKAYQgEAKgLAAIgCAAQgJABgFgJQgFgHAEgIQAUgrAqgBQAgAAARASQASATgCAcQgBAMgCAHQgEAKgNAPQgMAQgFAIQgGALgBANQgBAFgFAEQgEAEgGABg");
+	this.shape.setTransform(6.5211,11);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#B70032").s().p("AgLBoQgGgFAAgHQAAgJAGgFQAFgGAIAAQAIAAAFAGQAGAFAAAJQAAAHgGAFQgFAGgIAAQgIAAgFgGgAABA+QgIAAgEgGQgFgFABgJQADgTANgUIARgZQAJgNACgHQACgOgIgJQgGgJgPgBQgWgBgKAYQgEAKgLAAIgCAAQgJABgFgJQgFgHAEgIQAUgrAqgBQAgAAARASQASATgCAcQgBAMgCAHQgEAKgNAPQgMAQgFAIQgGALgBANQgBAFgFAEQgEAEgGABg");
+	this.shape_1.setTransform(6.5211,11);
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f("#000000").s().p("AgLBoQgGgFAAgHQAAgJAGgFQAFgGAIAAQAIAAAFAGQAGAFAAAJQAAAHgGAFQgFAGgIAAQgIAAgFgGgAABA+QgIAAgEgGQgFgFABgJQADgTANgUIARgZQAJgNACgHQACgOgIgJQgGgJgPgBQgWgBgKAYQgEAKgLAAIgCAAQgJABgFgJQgFgHAEgIQAUgrAqgBQAgAAARASQASATgCAcQgBAMgCAHQgEAKgNAPQgMAQgFAIQgGALgBANQgBAFgFAEQgEAEgGABg");
+	this.shape_2.setTransform(6.5211,11);
+	this.shape_3 = new cjs.Shape();
+	this.shape_3.graphics.f("#565C5E").s().p("AhJB9IAAj5ICTAAIAAD5g");
+	this.shape_3.setTransform(6.4949,11.0028,0.8764,0.8758);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).to({state:[{t:this.shape_2}]},1).to({state:[{t:this.shape_3}]},1).wait(1));
+	this._renderFirstFrame();
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-67,0,80,65);
+(lib.Enter_EN = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Text
+	this.text = new cjs.Text("Output", "normal 400 12px 'Roboto'", "#848B8E");
+	this.text.textAlign = "center";
+	this.text.lineHeight = 18;
+	this.text.lineWidth = 76;
+	this.text.parent = this;
+	this.text.setTransform(12,42);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text);
+	}
+	this.text._off = true;
+	this.timeline.addTween(cjs.Tween.get(this.text).wait(1).to({_off:false},0).to({_off:true},2).wait(1));
+	// Ebene 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#848B8E").s().p("AhoA3IBTg7IAAAnIBWAAIAAiBQAAgIAFgHQAGgFAJAAQAIAAAGAFQAGAHAAAIIAACVQAAAJgGAFQgGAGgIAAIhqAAIAAAog");
+	this.shape.setTransform(10.5,11.5);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#B70032").s().p("AhoA3IBTg7IAAAnIBWAAIAAiBQAAgIAFgHQAGgFAJAAQAIAAAGAFQAGAHAAAIIAACVQAAAJgGAFQgGAGgIAAIhqAAIAAAog");
+	this.shape_1.setTransform(10.5,11.5);
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f("#000000").s().p("AhoA3IBTg7IAAAnIBWAAIAAiBQAAgIAFgHQAGgFAJAAQAIAAAGAFQAGAHAAAIIAACVQAAAJgGAFQgGAGgIAAIhqAAIAAAog");
+	this.shape_2.setTransform(10.5,11.5);
+	this.shape_3 = new cjs.Shape();
+	this.shape_3.graphics.f("#565C5E").s().p("AhzCEIAAkHIDnAAIAAEHg");
+	this.shape_3.setTransform(10.4939,11.5174,0.9066,0.8696);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).to({state:[{t:this.shape_2}]},1).to({state:[{t:this.shape_3}]},1).wait(1));
+	this._renderFirstFrame();
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-28,0,80,65);
+(lib.fake_box = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#848B8E").ss(1,1,1).p("AmehtIM9AAIAADbIs9AAg");
+	this.shape.setTransform(38.4604,11,0.9268,1);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#FFFFFF").s().p("AmeBuIAAjbIM9AAIAADbg");
+	this.shape_1.setTransform(38.4604,11,0.9268,1);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.fake_box, new cjs.Rectangle(-1,-1,78.9,24), null);
+(lib.CheckWindow = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.summand_1_7_txt = new cjs.Text("0", "normal 400 14px 'Roboto'", "#B70032");
+	this.summand_1_7_txt.name = "summand_1_7_txt";
+	this.summand_1_7_txt.textAlign = "center";
+	this.summand_1_7_txt.lineHeight = 21;
+	this.summand_1_7_txt.lineWidth = 8;
+	this.summand_1_7_txt.parent = this;
+	this.summand_1_7_txt.setTransform(279.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_7_txt);
+	}
+	this.summand_1_6_txt = new cjs.Text("0", "normal 400 14px 'Roboto'", "#B70032");
+	this.summand_1_6_txt.name = "summand_1_6_txt";
+	this.summand_1_6_txt.textAlign = "center";
+	this.summand_1_6_txt.lineHeight = 21;
+	this.summand_1_6_txt.lineWidth = 8;
+	this.summand_1_6_txt.parent = this;
+	this.summand_1_6_txt.setTransform(257.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_6_txt);
+	}
+	this.summand_1_5_txt = new cjs.Text("0", "normal 400 14px 'Roboto'", "#B70032");
+	this.summand_1_5_txt.name = "summand_1_5_txt";
+	this.summand_1_5_txt.textAlign = "center";
+	this.summand_1_5_txt.lineHeight = 21;
+	this.summand_1_5_txt.lineWidth = 8;
+	this.summand_1_5_txt.parent = this;
+	this.summand_1_5_txt.setTransform(235.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_5_txt);
+	}
+	this.summand_1_4_txt = new cjs.Text("0", "normal 400 14px 'Roboto'", "#B70032");
+	this.summand_1_4_txt.name = "summand_1_4_txt";
+	this.summand_1_4_txt.textAlign = "center";
+	this.summand_1_4_txt.lineHeight = 21;
+	this.summand_1_4_txt.lineWidth = 8;
+	this.summand_1_4_txt.parent = this;
+	this.summand_1_4_txt.setTransform(213.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_4_txt);
+	}
+	this.summand_1_3_txt = new cjs.Text("0", "normal 400 14px 'Roboto'", "#B70032");
+	this.summand_1_3_txt.name = "summand_1_3_txt";
+	this.summand_1_3_txt.textAlign = "center";
+	this.summand_1_3_txt.lineHeight = 21;
+	this.summand_1_3_txt.lineWidth = 8;
+	this.summand_1_3_txt.parent = this;
+	this.summand_1_3_txt.setTransform(191.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_3_txt);
+	}
+	this.summand_1_2_txt = new cjs.Text("0", "normal 400 14px 'Roboto'", "#B70032");
+	this.summand_1_2_txt.name = "summand_1_2_txt";
+	this.summand_1_2_txt.textAlign = "center";
+	this.summand_1_2_txt.lineHeight = 21;
+	this.summand_1_2_txt.lineWidth = 8;
+	this.summand_1_2_txt.parent = this;
+	this.summand_1_2_txt.setTransform(169.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_2_txt);
+	}
+	this.summand_1_1_txt = new cjs.Text("0", "normal 400 14px 'Roboto'", "#B70032");
+	this.summand_1_1_txt.name = "summand_1_1_txt";
+	this.summand_1_1_txt.textAlign = "center";
+	this.summand_1_1_txt.lineHeight = 21;
+	this.summand_1_1_txt.lineWidth = 8;
+	this.summand_1_1_txt.parent = this;
+	this.summand_1_1_txt.setTransform(147.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_1_txt);
+	}
+	this.summand_1_0_txt = new cjs.Text("0", "normal 400 14px 'Roboto'", "#B70032");
+	this.summand_1_0_txt.name = "summand_1_0_txt";
+	this.summand_1_0_txt.textAlign = "center";
+	this.summand_1_0_txt.lineHeight = 21;
+	this.summand_1_0_txt.lineWidth = 8;
+	this.summand_1_0_txt.parent = this;
+	this.summand_1_0_txt.setTransform(125.9,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_0_txt);
+	}
+	this.summand_1_txt = new cjs.Text("Checksum:", "normal 700 14px 'Roboto'", "#B70032");
+	this.summand_1_txt.name = "summand_1_txt";
+	this.summand_1_txt.lineHeight = 21;
+	this.summand_1_txt.lineWidth = 76;
+	this.summand_1_txt.parent = this;
+	this.summand_1_txt.setTransform(28.2,20.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_txt);
+	}
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.summand_1_txt},{t:this.summand_1_0_txt},{t:this.summand_1_1_txt},{t:this.summand_1_2_txt},{t:this.summand_1_3_txt},{t:this.summand_1_4_txt},{t:this.summand_1_5_txt},{t:this.summand_1_6_txt},{t:this.summand_1_7_txt}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.CheckWindow, new cjs.Rectangle(26.2,18.8,259.7,22.599999999999998), null);
+(lib.CalcWindow = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.klammer_2_txt = new cjs.Text(")", "normal 400 14px 'Roboto'");
+	this.klammer_2_txt.name = "klammer_2_txt";
+	this.klammer_2_txt.textAlign = "center";
+	this.klammer_2_txt.lineHeight = 21;
+	this.klammer_2_txt.lineWidth = 8;
+	this.klammer_2_txt.parent = this;
+	this.klammer_2_txt.setTransform(294.9,54.3);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.klammer_2_txt);
+	}
+	this.klammer_1_txt = new cjs.Text("(", "normal 400 14px 'Roboto'");
+	this.klammer_1_txt.name = "klammer_1_txt";
+	this.klammer_1_txt.textAlign = "center";
+	this.klammer_1_txt.lineHeight = 21;
+	this.klammer_1_txt.lineWidth = 8;
+	this.klammer_1_txt.parent = this;
+	this.klammer_1_txt.setTransform(110.9,54.3);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.klammer_1_txt);
+	}
+	this.übertrag_first_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_first_txt.name = "übertrag_first_txt";
+	this.übertrag_first_txt.textAlign = "center";
+	this.übertrag_first_txt.lineHeight = 15;
+	this.übertrag_first_txt.lineWidth = 8;
+	this.übertrag_first_txt.parent = this;
+	this.übertrag_first_txt.setTransform(103.9,61.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_first_txt);
+	}
+	this.übertrag_7_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_7_txt.name = "übertrag_7_txt";
+	this.übertrag_7_txt.textAlign = "center";
+	this.übertrag_7_txt.lineHeight = 15;
+	this.übertrag_7_txt.lineWidth = 8;
+	this.übertrag_7_txt.parent = this;
+	this.übertrag_7_txt.setTransform(279.9,61.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_7_txt);
+	}
+	this.übertrag_6_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_6_txt.name = "übertrag_6_txt";
+	this.übertrag_6_txt.textAlign = "center";
+	this.übertrag_6_txt.lineHeight = 15;
+	this.übertrag_6_txt.lineWidth = 8;
+	this.übertrag_6_txt.parent = this;
+	this.übertrag_6_txt.setTransform(257.9,61.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_6_txt);
+	}
+	this.übertrag_5_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_5_txt.name = "übertrag_5_txt";
+	this.übertrag_5_txt.textAlign = "center";
+	this.übertrag_5_txt.lineHeight = 15;
+	this.übertrag_5_txt.lineWidth = 8;
+	this.übertrag_5_txt.parent = this;
+	this.übertrag_5_txt.setTransform(235.9,61.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_5_txt);
+	}
+	this.übertrag_4_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_4_txt.name = "übertrag_4_txt";
+	this.übertrag_4_txt.textAlign = "center";
+	this.übertrag_4_txt.lineHeight = 15;
+	this.übertrag_4_txt.lineWidth = 8;
+	this.übertrag_4_txt.parent = this;
+	this.übertrag_4_txt.setTransform(213.9,61.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_4_txt);
+	}
+	this.übertrag_3_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_3_txt.name = "übertrag_3_txt";
+	this.übertrag_3_txt.textAlign = "center";
+	this.übertrag_3_txt.lineHeight = 15;
+	this.übertrag_3_txt.lineWidth = 8;
+	this.übertrag_3_txt.parent = this;
+	this.übertrag_3_txt.setTransform(191.9,61.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_3_txt);
+	}
+	this.übertrag_2_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_2_txt.name = "übertrag_2_txt";
+	this.übertrag_2_txt.textAlign = "center";
+	this.übertrag_2_txt.lineHeight = 15;
+	this.übertrag_2_txt.lineWidth = 8;
+	this.übertrag_2_txt.parent = this;
+	this.übertrag_2_txt.setTransform(169.9,61.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_2_txt);
+	}
+	this.übertrag_1_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_1_txt.name = "übertrag_1_txt";
+	this.übertrag_1_txt.textAlign = "center";
+	this.übertrag_1_txt.lineHeight = 15;
+	this.übertrag_1_txt.lineWidth = 8;
+	this.übertrag_1_txt.parent = this;
+	this.übertrag_1_txt.setTransform(147.9,61.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_1_txt);
+	}
+	this.übertrag_0_txt = new cjs.Text("0", "normal 400 10px 'Roboto'");
+	this.übertrag_0_txt.name = "übertrag_0_txt";
+	this.übertrag_0_txt.textAlign = "center";
+	this.übertrag_0_txt.lineHeight = 15;
+	this.übertrag_0_txt.lineWidth = 8;
+	this.übertrag_0_txt.parent = this;
+	this.übertrag_0_txt.setTransform(125.9,61.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.übertrag_0_txt);
+	}
+	this.summand_2_7_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_2_7_txt.name = "summand_2_7_txt";
+	this.summand_2_7_txt.textAlign = "center";
+	this.summand_2_7_txt.lineHeight = 21;
+	this.summand_2_7_txt.lineWidth = 8;
+	this.summand_2_7_txt.parent = this;
+	this.summand_2_7_txt.setTransform(279.9,40.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_2_7_txt);
+	}
+	this.summand_2_6_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_2_6_txt.name = "summand_2_6_txt";
+	this.summand_2_6_txt.textAlign = "center";
+	this.summand_2_6_txt.lineHeight = 21;
+	this.summand_2_6_txt.lineWidth = 8;
+	this.summand_2_6_txt.parent = this;
+	this.summand_2_6_txt.setTransform(257.9,40.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_2_6_txt);
+	}
+	this.summand_2_5_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_2_5_txt.name = "summand_2_5_txt";
+	this.summand_2_5_txt.textAlign = "center";
+	this.summand_2_5_txt.lineHeight = 21;
+	this.summand_2_5_txt.lineWidth = 8;
+	this.summand_2_5_txt.parent = this;
+	this.summand_2_5_txt.setTransform(235.9,40.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_2_5_txt);
+	}
+	this.summand_2_4_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_2_4_txt.name = "summand_2_4_txt";
+	this.summand_2_4_txt.textAlign = "center";
+	this.summand_2_4_txt.lineHeight = 21;
+	this.summand_2_4_txt.lineWidth = 8;
+	this.summand_2_4_txt.parent = this;
+	this.summand_2_4_txt.setTransform(213.9,40.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_2_4_txt);
+	}
+	this.summand_2_3_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_2_3_txt.name = "summand_2_3_txt";
+	this.summand_2_3_txt.textAlign = "center";
+	this.summand_2_3_txt.lineHeight = 21;
+	this.summand_2_3_txt.lineWidth = 8;
+	this.summand_2_3_txt.parent = this;
+	this.summand_2_3_txt.setTransform(191.9,40.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_2_3_txt);
+	}
+	this.summand_2_2_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_2_2_txt.name = "summand_2_2_txt";
+	this.summand_2_2_txt.textAlign = "center";
+	this.summand_2_2_txt.lineHeight = 21;
+	this.summand_2_2_txt.lineWidth = 8;
+	this.summand_2_2_txt.parent = this;
+	this.summand_2_2_txt.setTransform(169.9,40.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_2_2_txt);
+	}
+	this.summand_2_1_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_2_1_txt.name = "summand_2_1_txt";
+	this.summand_2_1_txt.textAlign = "center";
+	this.summand_2_1_txt.lineHeight = 21;
+	this.summand_2_1_txt.lineWidth = 8;
+	this.summand_2_1_txt.parent = this;
+	this.summand_2_1_txt.setTransform(147.9,40.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_2_1_txt);
+	}
+	this.summand_2_0_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_2_0_txt.name = "summand_2_0_txt";
+	this.summand_2_0_txt.textAlign = "center";
+	this.summand_2_0_txt.lineHeight = 21;
+	this.summand_2_0_txt.lineWidth = 8;
+	this.summand_2_0_txt.parent = this;
+	this.summand_2_0_txt.setTransform(125.9,40.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_2_0_txt);
+	}
+	this.summand_1_7_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_7_txt.name = "summand_1_7_txt";
+	this.summand_1_7_txt.textAlign = "center";
+	this.summand_1_7_txt.lineHeight = 21;
+	this.summand_1_7_txt.lineWidth = 8;
+	this.summand_1_7_txt.parent = this;
+	this.summand_1_7_txt.setTransform(279.9,19.7);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_7_txt);
+	}
+	this.summand_1_6_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_6_txt.name = "summand_1_6_txt";
+	this.summand_1_6_txt.textAlign = "center";
+	this.summand_1_6_txt.lineHeight = 21;
+	this.summand_1_6_txt.lineWidth = 8;
+	this.summand_1_6_txt.parent = this;
+	this.summand_1_6_txt.setTransform(257.9,19.7);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_6_txt);
+	}
+	this.summand_1_5_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_5_txt.name = "summand_1_5_txt";
+	this.summand_1_5_txt.textAlign = "center";
+	this.summand_1_5_txt.lineHeight = 21;
+	this.summand_1_5_txt.lineWidth = 8;
+	this.summand_1_5_txt.parent = this;
+	this.summand_1_5_txt.setTransform(235.9,19.7);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_5_txt);
+	}
+	this.summand_1_4_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_4_txt.name = "summand_1_4_txt";
+	this.summand_1_4_txt.textAlign = "center";
+	this.summand_1_4_txt.lineHeight = 21;
+	this.summand_1_4_txt.lineWidth = 8;
+	this.summand_1_4_txt.parent = this;
+	this.summand_1_4_txt.setTransform(213.9,19.7);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_4_txt);
+	}
+	this.summand_1_3_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_3_txt.name = "summand_1_3_txt";
+	this.summand_1_3_txt.textAlign = "center";
+	this.summand_1_3_txt.lineHeight = 21;
+	this.summand_1_3_txt.lineWidth = 8;
+	this.summand_1_3_txt.parent = this;
+	this.summand_1_3_txt.setTransform(191.9,19.7);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_3_txt);
+	}
+	this.summand_1_2_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_2_txt.name = "summand_1_2_txt";
+	this.summand_1_2_txt.textAlign = "center";
+	this.summand_1_2_txt.lineHeight = 21;
+	this.summand_1_2_txt.lineWidth = 8;
+	this.summand_1_2_txt.parent = this;
+	this.summand_1_2_txt.setTransform(169.9,19.7);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_2_txt);
+	}
+	this.summand_1_1_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_1_txt.name = "summand_1_1_txt";
+	this.summand_1_1_txt.textAlign = "center";
+	this.summand_1_1_txt.lineHeight = 21;
+	this.summand_1_1_txt.lineWidth = 8;
+	this.summand_1_1_txt.parent = this;
+	this.summand_1_1_txt.setTransform(147.9,19.7);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_1_txt);
+	}
+	this.summand_1_0_txt = new cjs.Text("0", "normal 400 14px 'Roboto'");
+	this.summand_1_0_txt.name = "summand_1_0_txt";
+	this.summand_1_0_txt.textAlign = "center";
+	this.summand_1_0_txt.lineHeight = 21;
+	this.summand_1_0_txt.lineWidth = 8;
+	this.summand_1_0_txt.parent = this;
+	this.summand_1_0_txt.setTransform(125.9,19.7);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_0_txt);
+	}
+	this.summand_2_txt = new cjs.Text("summand_2", "normal 400 14px 'Roboto'");
+	this.summand_2_txt.name = "summand_2_txt";
+	this.summand_2_txt.lineHeight = 21;
+	this.summand_2_txt.lineWidth = 91;
+	this.summand_2_txt.parent = this;
+	this.summand_2_txt.setTransform(7.2,40.4,1,1.027);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_2_txt);
+	}
+	this.summand_1_txt = new cjs.Text("summand_1", "normal 400 14px 'Roboto'");
+	this.summand_1_txt.name = "summand_1_txt";
+	this.summand_1_txt.lineHeight = 21;
+	this.summand_1_txt.lineWidth = 91;
+	this.summand_1_txt.parent = this;
+	this.summand_1_txt.setTransform(7.2,19.05,1,1.027);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.summand_1_txt);
+	}
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#848B8E").ss(1,1,1).p("AW8AAMgt3AAA");
+	this.shape.setTransform(146.75,75.2);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.summand_1_txt},{t:this.summand_2_txt},{t:this.summand_1_0_txt},{t:this.summand_1_1_txt},{t:this.summand_1_2_txt},{t:this.summand_1_3_txt},{t:this.summand_1_4_txt},{t:this.summand_1_5_txt},{t:this.summand_1_6_txt},{t:this.summand_1_7_txt},{t:this.summand_2_0_txt},{t:this.summand_2_1_txt},{t:this.summand_2_2_txt},{t:this.summand_2_3_txt},{t:this.summand_2_4_txt},{t:this.summand_2_5_txt},{t:this.summand_2_6_txt},{t:this.summand_2_7_txt},{t:this.übertrag_0_txt},{t:this.übertrag_1_txt},{t:this.übertrag_2_txt},{t:this.übertrag_3_txt},{t:this.übertrag_4_txt},{t:this.übertrag_5_txt},{t:this.übertrag_6_txt},{t:this.übertrag_7_txt},{t:this.übertrag_first_txt},{t:this.klammer_1_txt},{t:this.klammer_2_txt}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.CalcWindow, new cjs.Rectangle(-1,17,301.9,59.900000000000006), null);
+(lib.active_button_faker = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#028FC3").s().p("AgYAYQgKgKAAgOQAAgNAKgLQALgKANAAQAOAAAKAKQALALAAANQAAAOgLAKQgKALgOAAQgNAAgLgLg");
+	this.shape.setTransform(3.5,3.5);
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.active_button_faker, new cjs.Rectangle(0,0,7,7), null);
+(lib.header_muli_mc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// text
+	this.text = new cjs.Text("LIN", "normal 700 16px 'Roboto'", "#848B8E");
+	this.text.lineHeight = 21;
+	this.text.lineWidth = 296;
+	this.text.parent = this;
+	this.text.setTransform(32,32);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text);
+	}
+	this.text_1 = new cjs.Text("CRC Computer", "normal 700 20px 'Roboto'", "#B70032");
+	this.text_1.lineHeight = 27;
+	this.text_1.lineWidth = 446;
+	this.text_1.parent = this;
+	this.text_1.setTransform(32,62);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_1);
+	}
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.text_1},{t:this.text}]}).wait(1));
+	// icons
+	this.enter_btn = new lib.Enter_EN();
+	this.enter_btn.name = "enter_btn";
+	this.enter_btn.setTransform(965,33);
+	new cjs.ButtonHelper(this.enter_btn, 0, 1, 2, false, new lib.Enter_EN(), 3);
+	this.reset_btn = new lib.Reset_EN();
+	this.reset_btn.name = "reset_btn";
+	this.reset_btn.setTransform(935,33);
+	new cjs.ButtonHelper(this.reset_btn, 0, 1, 2, false, new lib.Reset_EN(), 3);
+	this.instruction_btn = new lib.Instructions_EN();
+	this.instruction_btn.name = "instruction_btn";
+	this.instruction_btn.setTransform(997,33);
+	new cjs.ButtonHelper(this.instruction_btn, 0, 1, 2, false, new lib.Instructions_EN(), 3);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instruction_btn},{t:this.reset_btn},{t:this.enter_btn}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.header_muli_mc, new cjs.Rectangle(30,30,987,68), null);
+(lib.output_mc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// arrows
+	this.übertrag_arrow_2 = new lib.übertrag_arrow();
+	this.übertrag_arrow_2.name = "übertrag_arrow_2";
+	this.übertrag_arrow_2.setTransform(689.45,410.7,1,1,0,0,0,54.6,198.5);
+	this.übertrag_arrow_1 = new lib.übertrag_arrow();
+	this.übertrag_arrow_1.name = "übertrag_arrow_1";
+	this.übertrag_arrow_1.setTransform(359.2,410.7,1,1,0,0,0,54.6,198.5);
+	this.arrow_number_2 = new lib.number_arrow();
+	this.arrow_number_2.name = "arrow_number_2";
+	this.arrow_number_2.setTransform(705.85,410.7,1,1,0,0,0,71,198.5);
+	this.arrow_number_1 = new lib.number_arrow();
+	this.arrow_number_1.name = "arrow_number_1";
+	this.arrow_number_1.setTransform(375.6,410.7,1,1,0,0,0,71,198.5);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.arrow_number_1},{t:this.arrow_number_2},{t:this.übertrag_arrow_1},{t:this.übertrag_arrow_2}]}).wait(1));
+	// title_bar
+	this.text = new cjs.Text("Output", "normal 400 13px 'Roboto'", "#FFFFFF");
+	this.text.lineHeight = 19;
+	this.text.lineWidth = 74;
+	this.text.parent = this;
+	this.text.setTransform(680,6,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text);
+	}
+	this.instance = new lib.titlebar_output_small_mc();
+	this.instance.setTransform(940,46.05,1,0.9988,0,0,0,270,45.1);
+	this.text_1 = new cjs.Text("Calculation", "normal 400 13px 'Roboto'", "#FFFFFF");
+	this.text_1.lineHeight = 19;
+	this.text_1.lineWidth = 74;
+	this.text_1.parent = this;
+	this.text_1.setTransform(10,176,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_1);
+	}
+	this.instance_1 = new lib.titlebar_output_mc();
+	this.instance_1.setTransform(270,215.95,1,0.9988,0,0,0,270,45);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.text_1},{t:this.instance},{t:this.text}]}).wait(1));
+	// text
+	this.text_2 = new cjs.Text("Checksum Binary", "normal 400 12px 'Roboto'");
+	this.text_2.lineHeight = 18;
+	this.text_2.lineWidth = 146;
+	this.text_2.parent = this;
+	this.text_2.setTransform(680,38,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_2);
+	}
+	this.checksum_binary_txt = new cjs.Text("", "11px 'Verdana'");
+	this.checksum_binary_txt.name = "checksum_binary_txt";
+	this.checksum_binary_txt.lineHeight = 15;
+	this.checksum_binary_txt.lineWidth = 116;
+	this.checksum_binary_txt.parent = this;
+	this.checksum_binary_txt.setTransform(835.5,38,1,1.0029);
+	this.checksum_decimal_txt = new cjs.Text("", "11px 'Verdana'");
+	this.checksum_decimal_txt.name = "checksum_decimal_txt";
+	this.checksum_decimal_txt.lineHeight = 15;
+	this.checksum_decimal_txt.lineWidth = 116;
+	this.checksum_decimal_txt.parent = this;
+	this.checksum_decimal_txt.setTransform(835.5,98,1,1.0029);
+	this.text_3 = new cjs.Text("Checksum Decimal:", "normal 400 12px 'Roboto'");
+	this.text_3.lineHeight = 18;
+	this.text_3.lineWidth = 146;
+	this.text_3.parent = this;
+	this.text_3.setTransform(680,98,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_3);
+	}
+	this.text_4 = new cjs.Text("Checksum Hexadecimal:", "normal 400 12px 'Roboto'");
+	this.text_4.lineHeight = 18;
+	this.text_4.lineWidth = 146;
+	this.text_4.parent = this;
+	this.text_4.setTransform(680,68,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_4);
+	}
+	this.checksum_hex_txt = new cjs.Text("", "11px 'Verdana'");
+	this.checksum_hex_txt.name = "checksum_hex_txt";
+	this.checksum_hex_txt.lineHeight = 15;
+	this.checksum_hex_txt.lineWidth = 116;
+	this.checksum_hex_txt.parent = this;
+	this.checksum_hex_txt.setTransform(835.5,68,1,1.0029);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.checksum_hex_txt},{t:this.text_4},{t:this.text_3},{t:this.checksum_decimal_txt},{t:this.checksum_binary_txt},{t:this.text_2}]}).wait(1));
+	// back
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#848B8E").ss(1,2,0,3).p("EhMjgiUMCZHAAAMAAABEqMiZHAAAg");
+	this.shape.setTransform(490,411.4);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#DADEE1").s().p("EhMjAiWMAAAhErMCZHAAAMAAABErg");
+	this.shape_1.setTransform(490,411.4);
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f().s("#B1B6BA").ss(1,1,1).p("A4NAAMAwbAAA");
+	this.shape_2.setTransform(825,21);
+	this.shape_3 = new cjs.Shape();
+	this.shape_3.graphics.f().s("#848B8E").ss(1,1,1).p("EhMjANJIAAAJMCZHAAAIAAgJEBMkgNRIAAV3MgwcAAAIAA13");
+	this.shape_3.setTransform(490,106);
+	this.shape_4 = new cjs.Shape();
+	this.shape_4.graphics.f("#DADEE1").s().p("A4NK8IAA13MAwbAAAIAAV3g");
+	this.shape_4.setTransform(825,91);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.output_mc, new cjs.Rectangle(-1,0.5,982,631.7), null);
+(lib.input_mc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// text
+	this.datafield_info_txt = new cjs.Text("[0x00..0xFF]", "normal 400 12px 'Roboto'");
+	this.datafield_info_txt.name = "datafield_info_txt";
+	this.datafield_info_txt.lineHeight = 18;
+	this.datafield_info_txt.lineWidth = 136;
+	this.datafield_info_txt.parent = this;
+	this.datafield_info_txt.setTransform(502,96,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.datafield_info_txt);
+	}
+	this.text = new cjs.Text("Checksum Type:", "normal 400 12px 'Roboto'");
+	this.text.lineHeight = 18;
+	this.text.lineWidth = 111;
+	this.text.parent = this;
+	this.text.setTransform(10,37,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text);
+	}
+	this.text_1 = new cjs.Text("8.", "normal 400 12px 'Roboto'");
+	this.text_1.lineHeight = 18;
+	this.text_1.parent = this;
+	this.text_1.setTransform(403,127.7,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_1);
+	}
+	this.text_2 = new cjs.Text("4.", "normal 400 12px 'Roboto'");
+	this.text_2.lineHeight = 18;
+	this.text_2.parent = this;
+	this.text_2.setTransform(403,96.7,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_2);
+	}
+	this.text_3 = new cjs.Text("7.", "normal 400 12px 'Roboto'");
+	this.text_3.lineHeight = 18;
+	this.text_3.parent = this;
+	this.text_3.setTransform(303,127.7,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_3);
+	}
+	this.text_4 = new cjs.Text("3.", "normal 400 12px 'Roboto'");
+	this.text_4.lineHeight = 18;
+	this.text_4.parent = this;
+	this.text_4.setTransform(303,96.7,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_4);
+	}
+	this.text_5 = new cjs.Text("6.", "normal 400 12px 'Roboto'");
+	this.text_5.lineHeight = 18;
+	this.text_5.parent = this;
+	this.text_5.setTransform(203,127.7,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_5);
+	}
+	this.text_6 = new cjs.Text("2.", "normal 400 12px 'Roboto'");
+	this.text_6.lineHeight = 18;
+	this.text_6.parent = this;
+	this.text_6.setTransform(203,96.7,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_6);
+	}
+	this.text_7 = new cjs.Text("5.", "normal 400 12px 'Roboto'");
+	this.text_7.lineHeight = 18;
+	this.text_7.parent = this;
+	this.text_7.setTransform(103,127.7,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_7);
+	}
+	this.text_8 = new cjs.Text("1.", "normal 400 12px 'Roboto'");
+	this.text_8.lineHeight = 18;
+	this.text_8.parent = this;
+	this.text_8.setTransform(103,96.7,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_8);
+	}
+	this.text_9 = new cjs.Text("Data Field:", "normal 400 12px 'Roboto'");
+	this.text_9.lineHeight = 18;
+	this.text_9.lineWidth = 96;
+	this.text_9.parent = this;
+	this.text_9.setTransform(10,97,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_9);
+	}
+	this.identifier_info_txt = new cjs.Text("[0x00..0x3B]", "normal 400 12px 'Roboto'");
+	this.identifier_info_txt.name = "identifier_info_txt";
+	this.identifier_info_txt.lineHeight = 18;
+	this.identifier_info_txt.lineWidth = 116;
+	this.identifier_info_txt.parent = this;
+	this.identifier_info_txt.setTransform(202,65,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.identifier_info_txt);
+	}
+	this.text_10 = new cjs.Text("Input", "normal 400 13px 'Roboto'", "#FFFFFF");
+	this.text_10.lineHeight = 19;
+	this.text_10.lineWidth = 74;
+	this.text_10.parent = this;
+	this.text_10.setTransform(10,5,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_10);
+	}
+	this.text_11 = new cjs.Text("Identifier:", "normal 400 12px 'Roboto'");
+	this.text_11.lineHeight = 18;
+	this.text_11.lineWidth = 96;
+	this.text_11.parent = this;
+	this.text_11.setTransform(10,67,1,1.0029);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text_11);
+	}
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.text_11},{t:this.text_10},{t:this.identifier_info_txt},{t:this.text_9},{t:this.text_8},{t:this.text_7},{t:this.text_6},{t:this.text_5},{t:this.text_4},{t:this.text_3},{t:this.text_2},{t:this.text_1},{t:this.text},{t:this.datafield_info_txt}]}).wait(1));
+	// title_bar
+	this.instance = new lib.titlebar_input_mc();
+	this.instance.setTransform(270,44.95,1,0.9988,0,0,0,270,45);
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+	// back
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#848B8E").ss(1,1,1).p("EAzkAK8MhnHAAAIAA13MBnHAAAg");
+	this.shape.setTransform(330,90);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#DADEE1").s().p("EgzjAK8IAA13MBnHAAAIAAV3g");
+	this.shape_1.setTransform(330,90);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.input_mc, new cjs.Rectangle(-1,-0.5,662,161.5), null);
+(lib.graphic_mc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 1
+	this.output_mc = new lib.output_mc();
+	this.output_mc.name = "output_mc";
+	this.output_mc.setTransform(400.9,39,1,1,0,0,0,400.9,39);
+	this.input_mc = new lib.input_mc();
+	this.input_mc.name = "input_mc";
+	this.input_mc.setTransform(400.9,40,1,1,0,0,0,400.9,39);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.input_mc},{t:this.output_mc}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.graphic_mc, new cjs.Rectangle(-0.6,0.5,981.3000000000001,631.3), null);
+(lib.anleitung_titelzeile = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Ebene 3
+	this.text = new cjs.Text("Instructions", "normal 700 13px 'Roboto'", "#FFFFFF");
+	this.text.lineHeight = 19;
+	this.text.lineWidth = 116;
+	this.text.parent = this;
+	this.text.setTransform(17,8,1.0008,1.0044);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text);
+	}
+	this.timeline.addTween(cjs.Tween.get(this.text).wait(1));
+	// Ebene 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#000000").ss(1,2,0,4).p("EAkuAAAMhJbAAA");
+	this.shape.setTransform(235,25);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f().s("#000000").ss(2,2,0,4).p("EgktAB9IAAj5MBJbAAAIAAD5");
+	this.shape_1.setTransform(235,12.5);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
+	// Ebene 4
+	this.instance = new lib.farbe_mc();
+	this.instance.setTransform(235,6.25,3.9166,0.625,0,0,0,60,10);
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.anleitung_titelzeile, new cjs.Rectangle(-1,-1,472,28.4), null);
+(lib.anleitung_drag_mc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// close_btn
+	this.close_btn = new lib.anleitung_close_btn();
+	this.close_btn.name = "close_btn";
+	this.close_btn.setTransform(452.3,7.3,1.0005,1.0001,0,0,0,7.3,7.3);
+	this.timeline.addTween(cjs.Tween.get(this.close_btn).wait(1));
+	// titelzeile
+	this.titlebar_mc = new lib.anleitung_titelzeile();
+	this.titlebar_mc.name = "titlebar_mc";
+	this.titlebar_mc.setTransform(107,4.9,1.0002,1.0008,0,0,0,107,4.9);
+	this.timeline.addTween(cjs.Tween.get(this.titlebar_mc).wait(1));
+	// text
+	this.text = new cjs.Text("The CRC Computer gives you the chance to calculate the Classic or Enhanced Checksum of a Frame.\nFor the Classic Checksum you simply type at least one data byte in hexadecimal, decimal or binary fromat into the according input field and press the Calculate button. \nIf you want to calculate the Enhanced Checksum, you also have to define an identifier. Again you can chose between hexadecimal, decimal or binary format.\nAdditionally to the mere numeric result of the checksum you will also be presented with a graphical display of the calculation method.", "normal 400 12px 'Roboto'");
+	this.text.lineHeight = 19;
+	this.text.lineWidth = 434;
+	this.text.parent = this;
+	this.text.setTransform(17,39,1.0002,1.0001);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text);
+	}
+	this.timeline.addTween(cjs.Tween.get(this.text).wait(1));
+	// white_back
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#000000").ss(2,2,0,4).p("EAkugSUMAAAAkpEAkcASVMhJJAAAMAAAgkpMBJJAAA");
+	this.shape.setTransform(235,120.075);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#FFFFFF").s().p("EgkkASVMAAAgkpMBJJAAAMAAAAkpg");
+	this.shape_1.setTransform(234.1,120.075);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
+	// white_shadow
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f().s("#E5E5E5").ss(1,1,1).p("EglpgTaMBLTAAAMAAAAm1MhLTAAAg");
+	this.shape_2.setTransform(234.1,119.275);
+	this.shape_3 = new cjs.Shape();
+	this.shape_3.graphics.f("#FFFFFF").s().p("EglpATbMAAAgm1MBLTAAAMAAAAm1g");
+	this.shape_3.setTransform(234.1,119.275);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.anleitung_drag_mc, new cjs.Rectangle(-7.9,-6,484,250.6), null);
+(lib.fake_boxes = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Values
+	this.checksum_dec_fake = new cjs.Text("", "normal 400 14px 'Roboto'");
+	this.checksum_dec_fake.name = "checksum_dec_fake";
+	this.checksum_dec_fake.lineHeight = 21;
+	this.checksum_dec_fake.lineWidth = 74;
+	this.checksum_dec_fake.parent = this;
+	this.checksum_dec_fake.setTransform(723.15,65.8);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.checksum_dec_fake);
+	}
+	this.checksum_hex_fake = new cjs.Text("", "normal 400 14px 'Roboto'");
+	this.checksum_hex_fake.name = "checksum_hex_fake";
+	this.checksum_hex_fake.lineHeight = 21;
+	this.checksum_hex_fake.lineWidth = 74;
+	this.checksum_hex_fake.parent = this;
+	this.checksum_hex_fake.setTransform(723.15,35.7);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.checksum_hex_fake);
+	}
+	this.checksum_bin_fake = new cjs.Text("", "normal 400 14px 'Roboto'");
+	this.checksum_bin_fake.name = "checksum_bin_fake";
+	this.checksum_bin_fake.lineHeight = 21;
+	this.checksum_bin_fake.lineWidth = 74;
+	this.checksum_bin_fake.parent = this;
+	this.checksum_bin_fake.setTransform(723.15,5.9);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.checksum_bin_fake);
+	}
+	this.value_9 = new cjs.Text("", "normal 400 14px 'Roboto'");
+	this.value_9.name = "value_9";
+	this.value_9.lineHeight = 21;
+	this.value_9.lineWidth = 74;
+	this.value_9.parent = this;
+	this.value_9.setTransform(302.1,95.9);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.value_9);
+	}
+	this.value_8 = new cjs.Text("", "normal 400 14px 'Roboto'");
+	this.value_8.name = "value_8";
+	this.value_8.lineHeight = 21;
+	this.value_8.lineWidth = 74;
+	this.value_8.parent = this;
+	this.value_8.setTransform(202,95.9);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.value_8);
+	}
+	this.value_7 = new cjs.Text("", "normal 400 14px 'Roboto'");
+	this.value_7.name = "value_7";
+	this.value_7.lineHeight = 21;
+	this.value_7.lineWidth = 74;
+	this.value_7.parent = this;
+	this.value_7.setTransform(102.35,95.9);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.value_7);
+	}
+	this.value_6 = new cjs.Text("", "normal 400 14px 'Roboto'");
+	this.value_6.name = "value_6";
+	this.value_6.lineHeight = 21;
+	this.value_6.lineWidth = 74;
+	this.value_6.parent = this;
+	this.value_6.setTransform(2.25,95.9);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.value_6);
+	}
+	this.value_5 = new cjs.Text("", "normal 400 14px 'Roboto'");
+	this.value_5.name = "value_5";
+	this.value_5.lineHeight = 21;
+	this.value_5.lineWidth = 74;
+	this.value_5.parent = this;
+	this.value_5.setTransform(302.1,65.4);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.value_5);
+	}
+	this.value_4 = new cjs.Text("", "normal 400 14px 'Roboto'");
+	this.value_4.name = "value_4";
+	this.value_4.lineHeight = 21;
+	this.value_4.lineWidth = 74;
+	this.value_4.parent = this;
+	this.value_4.setTransform(202,65.4);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.value_4);
+	}
+	this.value_3 = new cjs.Text("", "normal 400 14px 'Roboto'");
+	this.value_3.name = "value_3";
+	this.value_3.lineHeight = 21;
+	this.value_3.lineWidth = 74;
+	this.value_3.parent = this;
+	this.value_3.setTransform(102.35,65.4);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.value_3);
+	}
+	this.value_2 = new cjs.Text("", "normal 400 14px 'Roboto'");
+	this.value_2.name = "value_2";
+	this.value_2.lineHeight = 21;
+	this.value_2.lineWidth = 74;
+	this.value_2.parent = this;
+	this.value_2.setTransform(2.25,65.4);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.value_2);
+	}
+	this.value_1 = new cjs.Text("", "normal 400 14px 'Roboto'");
+	this.value_1.name = "value_1";
+	this.value_1.lineHeight = 21;
+	this.value_1.lineWidth = 74;
+	this.value_1.parent = this;
+	this.value_1.setTransform(2,33.6);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.value_1);
+	}
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.value_1},{t:this.value_2},{t:this.value_3},{t:this.value_4},{t:this.value_5},{t:this.value_6},{t:this.value_7},{t:this.value_8},{t:this.value_9},{t:this.checksum_bin_fake},{t:this.checksum_hex_fake},{t:this.checksum_dec_fake}]}).wait(1));
+	// Boxes
+	this.fake_checksum_dez = new lib.fake_box();
+	this.fake_checksum_dez.name = "fake_checksum_dez";
+	this.fake_checksum_dez.setTransform(721.3,59.85,1.6161,1,0,0,0,0.1,0);
+	this.fake_checksum_hex = new lib.fake_box();
+	this.fake_checksum_hex.name = "fake_checksum_hex";
+	this.fake_checksum_hex.setTransform(721.3,29.7,1.6161,1,0,0,0,0.1,0);
+	this.fake_checksum_bin = new lib.fake_box();
+	this.fake_checksum_bin.name = "fake_checksum_bin";
+	this.fake_checksum_bin.setTransform(721.3,0,1.6161,1,0,0,0,0.1,0);
+	this.fake_box_0 = new lib.fake_box();
+	this.fake_box_0.name = "fake_box_0";
+	this.fake_box_0.setTransform(0.25,27.6);
+	this.fake_box_8 = new lib.fake_box();
+	this.fake_box_8.name = "fake_box_8";
+	this.fake_box_8.setTransform(300.2,89.85);
+	this.fake_box_7 = new lib.fake_box();
+	this.fake_box_7.name = "fake_box_7";
+	this.fake_box_7.setTransform(200,89.85);
+	this.fake_box_6 = new lib.fake_box();
+	this.fake_box_6.name = "fake_box_6";
+	this.fake_box_6.setTransform(100.35,89.85);
+	this.fake_box_5 = new lib.fake_box();
+	this.fake_box_5.name = "fake_box_5";
+	this.fake_box_5.setTransform(0,89.85);
+	this.fake_box_4 = new lib.fake_box();
+	this.fake_box_4.name = "fake_box_4";
+	this.fake_box_4.setTransform(300.2,59.2);
+	this.fake_box_3 = new lib.fake_box();
+	this.fake_box_3.name = "fake_box_3";
+	this.fake_box_3.setTransform(200,59.2);
+	this.fake_box_2 = new lib.fake_box();
+	this.fake_box_2.name = "fake_box_2";
+	this.fake_box_2.setTransform(100.35,59.2);
+	this.fake_box_1 = new lib.fake_box();
+	this.fake_box_1.name = "fake_box_1";
+	this.fake_box_1.setTransform(0,59.2);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.fake_box_1},{t:this.fake_box_2},{t:this.fake_box_3},{t:this.fake_box_4},{t:this.fake_box_5},{t:this.fake_box_6},{t:this.fake_box_7},{t:this.fake_box_8},{t:this.fake_box_0},{t:this.fake_checksum_bin},{t:this.fake_checksum_hex},{t:this.fake_checksum_dez}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.fake_boxes, new cjs.Rectangle(-0.5,-0.5,846.8,117), null);
+(lib.Anleitung = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// anleitung
+	this.instructions_drag_mc = new lib.anleitung_drag_mc();
+	this.instructions_drag_mc.name = "instructions_drag_mc";
+	this.instructions_drag_mc.setTransform(274.1,269.4,1,1,0,0,0,-4.9,-5.1);
+	this.timeline.addTween(cjs.Tween.get(this.instructions_drag_mc).wait(1));
+	// transparent
+	this.transparent_mc = new lib.anleitung_transparent();
+	this.transparent_mc.name = "transparent_mc";
+	this.transparent_mc.setTransform(276.9,176.9,1,1,0,0,0,276.9,176.9);
+	this.transparent_mc.alpha = 0.8008;
+	this.timeline.addTween(cjs.Tween.get(this.transparent_mc).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.Anleitung, new cjs.Rectangle(0,0,1040,770), null);
+// stage content:
+(lib.LIN_62_IGR_CRCComputer_EN = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	this.isSingleFrame = false;
+	// timeline functions:
+	this.frame_0 = function() {
+		if(this.isSingleFrame) {
+			return;
+		}
+		if(this.totalFrames == 1) {
+			this.isSingleFrame = true;
+		}
+		//Creation of Input-Boxes
+		var identifier = document.createElement("INPUT");
+		identifier.setAttribute("type", "text");
+		identifier.setAttribute("id", "identifier");
+		identifier.setAttribute("size", "5");
+		identifier.style.cssText = "background-color: #DADEE1; font-size: 14px; width: 55px; text-align:left; border: 0; position:relative";
+		var identifier_hex_marker = document.createElement("SPAN");
+		identifier_hex_marker.setAttribute("id", "identifier_hex_marker");
+		identifier_hex_marker.innerHTML = "0x";
+		identifier_hex_marker.style.cssText = "background-color: #DADEE1; font-size: 14px; font-family: Roboto; border: 1px inset #ccc; top:170px; left:150px; position:absolute";
+		identifier_hex_marker.appendChild(identifier);
+		document.body.appendChild(identifier_hex_marker);
+		var data_field_1 = document.createElement("INPUT");
+		data_field_1.setAttribute("id", "data_field_1");
+		setInputBox(data_field_1);
+		var data_field_1_hex_marker = document.createElement("SPAN");
+		data_field_1_hex_marker.setAttribute("id", "data_field_1_hex_marker");
+		setHexMarker(data_field_1_hex_marker, 150, 201, data_field_1, "0x");
+		var data_field_2 = document.createElement("INPUT");
+		data_field_2.setAttribute("id", "data_field_2");
+		setInputBox(data_field_2);
+		var data_field_2_hex_marker = document.createElement("SPAN");
+		setHexMarker(data_field_2_hex_marker, 250, 201, data_field_2, "0x");
+		var data_field_3 = document.createElement("INPUT");
+		data_field_3.setAttribute("id", "data_field_3");
+		setInputBox(data_field_3);
+		var data_field_3_hex_marker = document.createElement("SPAN");
+		setHexMarker(data_field_3_hex_marker, 350, 201, data_field_3, "0x");
+		var data_field_4 = document.createElement("INPUT");
+		data_field_4.setAttribute("id", "data_field_4");
+		setInputBox(data_field_4);
+		var data_field_4_hex_marker = document.createElement("SPAN");
+		setHexMarker(data_field_4_hex_marker, 450, 201, data_field_4, "0x");
+		var data_field_5 = document.createElement("INPUT");
+		data_field_5.setAttribute("id", "data_field_5");
+		setInputBox(data_field_5);
+		var data_field_5_hex_marker = document.createElement("SPAN");
+		setHexMarker(data_field_5_hex_marker, 150, 232, data_field_5, "0x");
+		var data_field_6 = document.createElement("INPUT");
+		data_field_6.setAttribute("id", "data_field_6");
+		setInputBox(data_field_6);
+		var data_field_6_hex_marker = document.createElement("SPAN");
+		setHexMarker(data_field_6_hex_marker, 250, 232, data_field_6, "0x");
+		var data_field_7 = document.createElement("INPUT");
+		data_field_7.setAttribute("id", "data_field_7");
+		setInputBox(data_field_7);
+		var data_field_7_hex_marker = document.createElement("SPAN");
+		setHexMarker(data_field_7_hex_marker, 350, 232, data_field_7, "0x");
+		var data_field_8 = document.createElement("INPUT");
+		data_field_8.setAttribute("id", "data_field_8");
+		setInputBox(data_field_8);
+		var data_field_8_hex_marker = document.createElement("SPAN");
+		setHexMarker(data_field_8_hex_marker, 450, 232, data_field_8, "0x");
+		var input_boxes = [identifier, data_field_1, data_field_2, data_field_3, data_field_4, data_field_5, data_field_6, data_field_7, data_field_8];
+		var marker = [identifier_hex_marker, data_field_1_hex_marker, data_field_2_hex_marker, data_field_3_hex_marker, data_field_4_hex_marker, data_field_5_hex_marker, data_field_6_hex_marker, data_field_7_hex_marker, data_field_8_hex_marker];
+		//Output-Boxes
+		var bin_checksum = document.createElement("INPUT");
+		bin_checksum.setAttribute("type", "text");
+		bin_checksum.setAttribute("id", "bin_checksum");
+		bin_checksum.setAttribute("size", "5");
+		bin_checksum.disabled = true;
+		bin_checksum.style.cssText = "font-size:14px; width: 120px; top:140px; left:870px; text-align:left; position:absolute";
+		document.body.appendChild(bin_checksum);
+		var hex_checksum = document.createElement("INPUT");
+		hex_checksum.setAttribute("type", "text");
+		hex_checksum.setAttribute("id", "hex_checksum");
+		hex_checksum.setAttribute("size", "5");
+		hex_checksum.disabled = true;
+		hex_checksum.style.cssText = "font-size:14px; width: 120px; top:170px; left:870px; text-align:left; position:absolute";
+		document.body.appendChild(hex_checksum);
+		var dec_checksum = document.createElement("INPUT");
+		dec_checksum.setAttribute("type", "text");
+		dec_checksum.setAttribute("id", "dec_checksum");
+		dec_checksum.setAttribute("size", "5");
+		dec_checksum.disabled = true;
+		dec_checksum.style.cssText = "font-size:14px; width: 120px; top:200px; left:870px; text-align:left; position:absolute";
+		document.body.appendChild(dec_checksum);
+		var hexa_radio = makeRadioButton("number_type", "hexa", "Hexadecimal");
+		var dezi_radio = makeRadioButton("number_type", "dezi", "Decimal");
+		var bin_radio  = makeRadioButton("number_type", "bin",  "Binary");
+		var classic_checksum = makeRadioButton("checksum_type", "classic", "Classic Checksum");
+		var enhanced_checksum = makeRadioButton("checksum_type", "enhanced", "Enhanced Checksum");
+		classic_checksum.style.cssText = "color: black; font-size:13px; top:144px; left:145px; font-family: Roboto; position:absolute;";
+		enhanced_checksum.style.cssText = "color: black; font-size:13px; top:144px; left:290px; font-family: Roboto; position:absolute";
+		hexa_radio.style.cssText = "color: white; font-size:13px; top:110px; left:410px; font-family: Roboto; position:absolute";
+		dezi_radio.style.cssText = "color: white; font-size:13px; top:110px; left:520px; font-family: Roboto; position:absolute";
+		bin_radio.style.cssText = "color: white; font-size:13px; top:110px; left:600px; font-family: Roboto; position:absolute";
+		document.body.appendChild(enhanced_checksum);
+		document.body.appendChild(classic_checksum);
+		document.body.appendChild(dezi_radio);
+		document.body.appendChild(hexa_radio);
+		document.body.appendChild(bin_radio);
+		reset_btn = this.graphic.reset_btn;
+		reset_btn.addEventListener('click', standardCFG);
+		enter_btn = this.graphic.enter_btn;
+		enter_btn.addEventListener('click', enterDoCalculationFromButton);
+		var content_visible = false;
+		document.querySelector('#identifier').addEventListener('keypress', function (e) {
+		    var key = e.which || e.keyCode;
+		    if (key === 13 && (identifier.value != "" && data_field_1.value != "")) { 
+				if(!(content_visible)) calculation();
+		    } 
+		});
+		for(i = 1; i < input_boxes.length; i++){
+			document.querySelector('#data_field_' + i).addEventListener('keypress', function(e) {enterDoCalculation(e);} );
+		}
+		function enterDoCalculation(e){
+			console.log("Starting Calculation");
+			var key = e.which || e.keyCode;
+			if (key === 13) { 
+				if(classic_checksum.firstChild.checked){
+					if(data_field_1.value != "" && data_field_2.value != ""){
+						if(!(content_visible)) calculation();
+					}
+				} else if (enhanced_checksum.firstChild.checked) {
+					if(identifier.value != "" && data_field_1.value != ""){
+						if(!(content_visible)) calculation();
+					}
+				}
+			}
+		}
+		function enterDoCalculationFromButton(){
+			console.log("Starting Calculation from Button");
+			if(classic_checksum.firstChild.checked){
+				if(data_field_1.value != "" && data_field_2.value != ""){
+					if(!(content_visible)) calculation();
+				}
+			} else if (enhanced_checksum.firstChild.checked) {
+				if(identifier.value != "" && data_field_1.value != ""){
+					if(!(content_visible)) calculation();
+				}
+			}
+		}
+		//Limit the possible values for INPUT-Boxes
+		document.getElementById('identifier').addEventListener('input', function () {
+			windowCleaner();
+			if(hexa_radio.firstChild.checked){
+				identifier.value = identifier.value.toUpperCase().replace(/ /g,'');
+				valueCheckAndReplace(onlyHex, identifier);
+				var current_value = parseInt(identifier.value, 16);
+				if(current_value > 59){
+					identifier.value = "3B";
+				}
+			} else if (dezi_radio.firstChild.checked){
+				valueCheckAndReplace(onlyNumbers2, identifier);
+				if(identifier.value > 59){
+					identifier.value = 59;
+				}
+			} else if (bin_radio.firstChild.checked){
+				valueCheckAndReplace(onlyBinary6, identifier);
+				var current_value = parseInt(identifier.value, 2);
+				if(current_value > 59){
+					identifier.value = "111011";
+				}
+			}
+			if(identifier.value != "0x" && identifier.value != ""){
+				identifier_number = parseInt(identifier.id.substr(identifier.id.length-1, identifier.id.length))
+				document.getElementById("data_field_1").disabled = false;
+				marker[1].style.backgroundColor = "white";
+				input_boxes[1].style.backgroundColor = "white";
+				marker[1].style.color = "black";
+				input_boxes[1].style.color = "black";
+				for(i = 1; i < input_boxes.length; i++){
+					boxLocker(input_boxes[i]);
+				}
+			} else {
+				for(i = 1; i < input_boxes.length; i++){
+					input_boxes[i].disabled = true;
+					marker[i].style.backgroundColor = "#DADEE1";
+					input_boxes[i].style.backgroundColor = "#DADEE1";
+					marker[i].style.color = "#896D6D";
+					input_boxes[i].style.color = "#896D6D";
+				}
+			}
+		});
+		var data_field_value_backup;
+		var selectorStartPosition;
+		var selectorEndPosition;
+		data_field_1.addEventListener('input', function(){input_limiter(data_field_1)});
+		data_field_2.addEventListener('input', function(){input_limiter(data_field_2)});
+		data_field_3.addEventListener('input', function(){input_limiter(data_field_3)});
+		data_field_4.addEventListener('input', function(){input_limiter(data_field_4)});
+		data_field_5.addEventListener('input', function(){input_limiter(data_field_5)});
+		data_field_6.addEventListener('input', function(){input_limiter(data_field_6)});
+		data_field_7.addEventListener('input', function(){input_limiter(data_field_7)});
+		data_field_8.addEventListener('input', function(){input_limiter(data_field_8)});
+		data_field_1.addEventListener('keydown', function(){saveData(data_field_1)});
+		data_field_2.addEventListener('keydown', function(){saveData(data_field_2)});
+		data_field_3.addEventListener('keydown', function(){saveData(data_field_3)});
+		data_field_4.addEventListener('keydown', function(){saveData(data_field_4)});
+		data_field_5.addEventListener('keydown', function(){saveData(data_field_5)});
+		data_field_6.addEventListener('keydown', function(){saveData(data_field_6)});
+		data_field_7.addEventListener('keydown', function(){saveData(data_field_7)});
+		data_field_8.addEventListener('keydown', function(){saveData(data_field_8)});
+		identifier.addEventListener('keydown', function(){saveData(identifier)});
+		var input_identi_info = this.graphic_mc.input_mc.identifier_info_txt;
+		var input_data_info = this.graphic_mc.input_mc.datafield_info_txt;
+		var button_before;
+		standardCFG();
+		hexa_radio.firstChild.addEventListener("click", function(){
+			input_identi_info.text = "[0x00..0x3B]";
+			input_data_info.text = "[0x00..0xFF]";
+			for(i = 0; i < 9; i++) {
+				setHexMarker(marker[i], parseInt(marker[i].style.left), parseInt(marker[i].style.top), input_boxes[i], "0x");
+				input_boxes[i].style.width = "55px";
+				if(input_boxes[i].disabled === false){
+					marker[i].style.backgroundColor = "white";
+					marker[i].style.color = "black";
+				} else {
+					marker[i].style.backgroundColor = "#DADEE1";
+					marker[i].style.color = "#896D6D";
+				}
+			}
+			if(button_before == dezi_radio) {
+				for(i = 0; i < 9; i++){
+					if(input_boxes[i].value != "") { 
+						input_boxes[i].value = parseInt(input_boxes[i].value).toString(16).toUpperCase();
+					} else {
+						input_boxes[i].value = "";
+					}
+				}
+			}	
+			if(button_before == bin_radio){
+				for(i = 0; i < 9; i++) {
+					if(input_boxes[i].value != "") {
+						input_boxes[i].value = parseInt(input_boxes[i].value, 2);
+						input_boxes[i].value = parseInt(input_boxes[i].value).toString(16).toUpperCase();
+					} else {
+						input_boxes[i].value = "";
+					}
+				}
+			}
+			button_before = hexa_radio;
+		});
+		dezi_radio.firstChild.addEventListener("click", function(){
+			input_identi_info.text = "[0..59]";
+			input_data_info.text = "[0..255]";
+			if(button_before == hexa_radio){
+				for(i = 0; i < 9; i++) {
+					setHexMarker(marker[i], parseInt(marker[i].style.left), parseInt(marker[i].style.top), input_boxes[i], "");
+					input_boxes[i].style.width = "72px";
+					if(input_boxes[i].value != "") {
+						input_boxes[i].value = parseInt(input_boxes[i].value, 16);
+					}
+				}
+			}	
+			if(button_before == bin_radio){
+				for(i = 0; i < 9; i++) {
+					if(input_boxes[i].value != "") {
+						input_boxes[i].value = parseInt(input_boxes[i].value, 2);
+					}
+				}
+			}	
+			button_before = dezi_radio;
+		});
+		bin_radio.firstChild.addEventListener("click", function(){
+			input_identi_info.text = "[000000..111011]";
+			input_data_info.text = "[00000000..11111111]";
+			if(button_before == hexa_radio) {
+				for(i = 0; i < 9; i++) {
+					setHexMarker(marker[i], parseInt(marker[i].style.left), parseInt(marker[i].style.top), input_boxes[i], "");
+					input_boxes[i].style.width = "72px";
+					if(input_boxes[i].value != "") {
+						input_boxes[i].value = hex2Bin(input_boxes[i].value);
+						if(input_boxes[i] == identifier && input_boxes[i].textLength < 6){
+							for (o = identifier.textLength; 6 > o; o++){
+								identifier.value = "0" + identifier.value;
+							}
+						} else if (input_boxes[i] != identifier && input_boxes[i].textLength < 8) {
+							for (p = input_boxes[i].textLength; p < 8; p++){
+								input_boxes[i].value = "0" + input_boxes[i].value;
+							}
+						}
+					} else {
+						input_boxes[i].value = "";
+					}
+				}
+			}
+			if(button_before == dezi_radio) {
+				for(i = 0; i < 9; i++) {
+					if(input_boxes[i].value != "") {
+						input_boxes[i].value = parseInt(input_boxes[i].value).toString(16);
+						input_boxes[i].value = hex2Bin(input_boxes[i].value);
+						if(input_boxes[i] == identifier && input_boxes[i].textLength < 6){
+							for (p = identifier.textLength; 6 > p; p++){
+								identifier.value = "0" + identifier.value;
+							}
+						} else if (input_boxes[i] != identifier && input_boxes[i].textLength < 8) {
+							for (o = input_boxes[i].textLength; 8 > o; o++){
+								input_boxes[i].value = "0" + input_boxes[i].value;
+							}
+						}
+					}
+				}
+			}
+			button_before = bin_radio;
+		});
+		enhanced_checksum.firstChild.addEventListener("click", function(){
+			windowCleaner();
+			//Identifier aktivieren
+			identifier.disabled = false;
+			//Alle Felder vorerst deaktivieren
+			if(identifier.value == ""){
+				for(i = 1; i < input_boxes.length; i++){
+					input_boxes[i].disabled = true;
+					input_boxes[i].style.backgroundColor = "#DADEE1";
+					input_boxes[i].style.color = "#896D6D";
+					marker[i].style.backgroundColor = "#DADEE1";
+					marker[i].style.color = "#896D6D";
+				}
+			}
+			if(hexa_radio.firstChild.checked){
+				identifier.style.cssText = "background-color: white; font-size: 14px; width: 55px; text-align:left; border: 0; position:relative";
+			} else {
+				identifier.style.cssText = "background-color: white; font-size: 14px; width: 72px; text-align:left; border: 0; position:relative";
+			}
+			identifier_hex_marker.style.cssText = "background-color: white; font-size: 14px; font-family: Roboto; border: 1px inset #ccc; top:170px; left:150px; position:absolute";
+		});
+		classic_checksum.firstChild.addEventListener("click", function(){
+			windowCleaner();
+			//Identifier deaktivieren
+			identifier.disabled = true;
+			input_boxes[0].style.backgroundColor = "#DADEE1";
+			input_boxes[0].style.color = "#896D6D";
+			marker[0].style.backgroundColor = "#DADEE1";
+			marker[0].style.color = "#896D6D";
+			//Erste Input-Box an
+			input_boxes[1].disabled = false;
+			input_boxes[1].style.backgroundColor = "white";
+			input_boxes[1].style.color = "black";
+			marker[1].style.backgroundColor = "white";
+			marker[1].style.color = "black";
+			//Alle anderen Boxen mit Wert auch anschalten
+			for(i = 1; i < input_boxes.length; i++){
+				boxLocker(input_boxes[i]);
+			}
+		});
+		//Setzt alles auf Anfang zurück
+		function standardCFG(){
+		    for(i = 0; i < input_boxes.length; i++){
+				if(i == 1) {
+					input_boxes[i].value = "";
+					setHexMarker(marker[i], parseInt(marker[i].style.left), parseInt(marker[i].style.top), input_boxes[i], "0x");
+					input_boxes[i].style.width = "55px";
+					continue;
+				}
+				marker[i].style.color = "#896D6D";
+				marker[i].style.backgroundColor = "#DADEE1";
+				input_boxes[i].style.backgroundColor = "#DADEE1";
+				input_boxes[i].style.color = "#896D6D";
+				input_boxes[i].value = "";
+				setHexMarker(marker[i], parseInt(marker[i].style.left), parseInt(marker[i].style.top), input_boxes[i], "0x");
+				input_boxes[i].style.width = "55px";
+			}
+			for(i = 2; i < input_boxes.length; i++){
+				input_boxes[i].disabled = true;
+			}
+			identifier.disabled = true;
+			input_boxes[1].focus();
+			hexa_radio.firstChild.checked = true;
+			classic_checksum.firstChild.checked = true;
+			button_before = hexa_radio;
+			windowCleaner();
+		}
+		//Formt Hex->Bin
+		function hex2Bin(n){
+			return parseInt(n,16).toString(2)
+		}
+		//Function to create radioButton with lable
+		function makeRadioButton(name, value, text) {
+		    var label = document.createElement("label");
+		    var radio = document.createElement("input");
+		    radio.type = "radio";
+		    radio.name = name;
+		    radio.value = value;
+			if(radio.value == "hexa") radio.checked = "checked";
+			if(radio.value == "classic") radio.checked = "checked";
+		    label.appendChild(radio);
+		    label.appendChild(document.createTextNode(text));
+		    return label;
+		}
+		//Reg-Exp for only letters from A-F
+		var onlyHex = new RegExp("^[0-9A-Fa-f]{1}[0-9A-Fa-f]{0,1}$");
+		//Reg-Exp for only  3 digit numbers
+		var onlyNumbers = new RegExp("^[0-9]{1,3}$");
+		//Reg-Exp for only  2 digit numbers
+		var onlyNumbers2 = new RegExp("^[0-9]{1,2}$");
+		//Reg-Exp for only 6 char long binary
+		var onlyBinary6 = new RegExp("^[0-1]{1,6}$");
+		//Reg-Exp for only 8 char long binary
+		var onlyBinary = new RegExp("^[0-1]{1,8}$");
+		function saveData(box){
+			data_field_value_backup = box.value;
+			selectorStartPosition = box.selectionStart;
+			selectorEndPosition = box.selectionEnd;
+		}
+		function valueCheckAndReplace(regExp, box){
+			if(box.value != ""){
+				if(!regExp.test(box.value)){
+					box.value = data_field_value_backup;
+					box.selectionStart = selectorStartPosition;
+					box.selectionEnd = selectorEndPosition;
+				}
+			}
+		}
+		//Limitation of input for input-boxes
+		function input_limiter(box){
+			windowCleaner();
+			if(hexa_radio.firstChild.checked){
+				box.value = box.value.toUpperCase().replace(/ /g,'');
+				valueCheckAndReplace(onlyHex, box);
+			} else if (dezi_radio.firstChild.checked){
+				valueCheckAndReplace(onlyNumbers, box);
+				if(box.value > 255){
+					box.value = 255;
+				}
+			} else if (bin_radio.firstChild.checked){
+				valueCheckAndReplace(onlyBinary, box);
+				var current_value = parseInt(box.value, 2);
+				if(current_value > 255){
+					box.value = "11111111";
+				}
+			}
+			boxLocker(box);
+		}
+		function boxLocker(box){
+			if(box.value != "0x" && box.value != ""){
+				box_number = getBoxNumber(box);
+				next_box = box_number + 1;
+				if(box_number < 8){
+					document.getElementById("data_field_" + next_box).disabled = false;
+					marker[parseInt(next_box)].style.backgroundColor = "white";
+					input_boxes[parseInt(next_box)].style.backgroundColor = "white";
+					marker[parseInt(next_box)].style.color = "black";
+					input_boxes[parseInt(next_box)].style.color = "black";
+					boxLocker(document.getElementById("data_field_" + next_box));
+				}
+			} else {
+				box_number = getBoxNumber(box);
+				next_box = box_number + 1;
+				for(i = next_box; i < 9; i++){
+					document.getElementById("data_field_" + i).disabled = true;
+					marker[i].style.backgroundColor = "#DADEE1";
+					input_boxes[i].style.backgroundColor = "#DADEE1";
+					marker[i].style.color = "#896D6D";
+					input_boxes[i].style.color = "#896D6D";
+				}
+			}
+		}
+		/*function moveFocusRight(box, jumpPosition){
+			if(box.selectionStart == jumpPosition && box.selectionEnd == jumpPosition){
+				if(box.id == "identifier"){
+					data_field_1.focus();
+					data_field_1.selectionStart = 0;
+					data_field_1.selectionEnd = data_field_1.textLength;
+				}else if(box.id != "data_field_8"){
+					document.getElementById("data_field_" + (getBoxNumber(box)+1)).focus();
+					document.getElementById("data_field_" + (getBoxNumber(box)+1)).selectionStart = 0;
+					document.getElementById("data_field_" + (getBoxNumber(box)+1)).selectionEnd = box.textLength;
+				}
+			}
+		}*/
+		function getBoxNumber(box){
+			return parseInt(box.id.substr(box.id.length-1, box.id.length))
+		}
+		function getDataFieldValues(classic_or_enhanced, value_array, tester_array){
+			//Überall wo kein Wert eingetragen ist kommt ein false hin
+			for(i = classic_or_enhanced; i < input_boxes.length; i++){
+				if(input_boxes[i].value != ""){
+					tester_array[i] = input_boxes[i].value;
+				} else {
+					tester_array[i] = false;
+				}
+			}
+			//Es werden alle Daten bis zum ersten leeren Feld übernommen
+			for(i = classic_or_enhanced; i < input_boxes.length; i++){
+				if(tester_array[i] === false){
+					break;
+				} else {
+					value_array[i-classic_or_enhanced] = tester_array[i];
+				}
+			}
+		}
+		function setInputBox(box){
+			box.setAttribute("type", "text");
+			box.setAttribute("size", "5");
+			if(box == data_field_1){
+				box.style.cssText = "background-color: white; border: 0; font-size:14px; width: 55px; text-align:left; position:relative";
+			} else {
+				box.style.cssText = "background-color: #DADEE1; border: 0; font-size:14px; width: 55px; text-align:left; position:relative";
+			}
+		}
+		function setHexMarker(span, x, y, data_field, innerHTML){
+			span.innerHTML = innerHTML;
+			if(data_field == data_field_1){
+				span.style.cssText = "background-color: white; font-size: 14px; font-family: Roboto; border: 1px inset #ccc; top:170px; left:150px; position:absolute";
+			} else {
+				span.style.cssText = "background-color: #DADEE1; font-size: 14px; font-family: Roboto; border: 1px inset #ccc; top:170px; left:150px; position:absolute";
+				span.style.color = "#896D6D";
+			}
+			span.style.top = y + "px";
+			span.style.left = x + "px";
+			span.appendChild(data_field);
+			document.body.appendChild(span);
+		}
+		var window1;
+		var window2;
+		var window3;
+		var window4;
+		var window5;
+		var window6;
+		var window7;
+		var window8;
+		var window9;
+		var window10;
+		var window11;
+		var window12;
+		var window13;
+		var window14;
+		var window15;
+		var window16;
+		var window17;
+		var window18;
+		var window19;
+		var window20;
+		var windows = [window1, window2, window3, window4, window5, window6, window7, window8, window9, window10, window11, window12, window13, window14, window15, window16, window17, window18, window19, window20];
+		var arrowNumber1;
+		var arrowNumber2;
+		var arrowNumberWindows = [arrowNumber1, arrowNumber2];
+		var arrow_1 = this.graphic_mc.output_mc.arrow_number_1
+		var arrow_2 = this.graphic_mc.output_mc.arrow_number_2
+		var übertrag_arrow_1 = this.graphic_mc.output_mc.übertrag_arrow_1
+		var übertrag_arrow_2 = this.graphic_mc.output_mc.übertrag_arrow_2
+		arrow_1.visible = false;
+		arrow_2.visible = false;
+		übertrag_arrow_1.visible = false;
+		übertrag_arrow_2.visible = false;
+		function calculation(){
+			var data_field_values_tester = []
+			var data_field_values = []
+			var classic_or_enhanced;
+			content_visible = true;
+			//Füllen des Daten-Arrays wen enhanced checksum(0)/classic checksum(1) gesetzt ist
+			if(enhanced_checksum.firstChild.checked){
+				classic_or_enhanced = 0;
+				getDataFieldValues(classic_or_enhanced, data_field_values, data_field_values_tester);
+			} else if (classic_checksum.firstChild.checked){
+				classic_or_enhanced = 1;
+				getDataFieldValues(classic_or_enhanced, data_field_values, data_field_values_tester);
+			}
+			//Hex-Radio gesetzt
+			//Hex-Werte in Binär umformer und falls 0en fehlen werden diese davorgestellt um 8 bit zu haben
+			if(hexa_radio.firstChild.checked){
+				for(i = 0; i < data_field_values.length; i++){
+					data_field_values[i] = hex2Bin(data_field_values[i]);
+					if(data_field_values[i].length < 8){
+						for (o = data_field_values[i].length; o < 8; o++){
+							data_field_values[i] = "0" + data_field_values[i];
+						}
+					}
+				}
+			}
+			//Dezi-Radio gesetzt
+			//Dezimal Werte in Binär umformen und fehlende 0en davorstellen
+			if(dezi_radio.firstChild.checked){
+				for(i = 0; i < data_field_values.length; i++){
+					data_field_values[i] = parseInt(data_field_values[i]).toString(16);
+					data_field_values[i] = hex2Bin(data_field_values[i]);
+					if(data_field_values[i].length < 8){
+						for (o = data_field_values[i].length; o < 8; o++){
+							data_field_values[i] = "0" + data_field_values[i];
+						}
+					}
+				}
+			}
+			//Binär-Radio gesetzt
+			//Fehlende 0en aufffüllen
+			if(bin_radio.firstChild.checked){
+				for(i = 0; i < data_field_values.length; i++){
+					if(data_field_values[i].length < 8){
+						for (o = data_field_values[i].length; o < 8; o++){
+							data_field_values[i] = "0" + data_field_values[i];
+						}
+					}
+				}
+			}
+			if(enhanced_checksum.firstChild.checked){
+				data_field_values[0] = calculatePID(data_field_values[0].split(""));
+				data_field_values[0] = data_field_values[0].join("");
+			}
+			var übertrag = ["0", "0", "0", "0", "0", "0", "0", "0"];
+			var ergebnis = 0;
+			var ergebnis_binary;
+			var ergebnis_output;
+			var ergebnis_output_save;
+			var übertrag_output;
+			var first_summand;
+			var second_summand;
+			var x_position = 42;
+			var y_position = 300;
+			var y_position_mover = 65;
+			var übertrag_happend = false;
+			var windowCounter = 0;
+			var arrowNumberWindowCounter = 0;
+			for(i = 0; i < data_field_values.length-1; i++){
+				//Ersten und zweiten Summand bestimmen. Im fall i==0 sind das immer die ersten zwei Werte im data array
+				if(i == 0){
+					first_summand = data_field_values[i].split("");
+					second_summand = data_field_values[i+1].split("");
+				} else {
+					first_summand = ergebnis_output;
+					second_summand = data_field_values[i+1].split("");
+				}
+				//Int Ergebnis der Addition ausrechnen
+				if(i == 0){
+					ergebnis = (parseInt(data_field_values[i],2) + parseInt(data_field_values[i+1],2));
+				} else if (i != (data_field_values.length-1) && i != 0) {
+					ergebnis += parseInt(data_field_values[i+1],2);
+				}
+				//Ergebnis in binary umwandeln
+				ergebnis_binary = decToBinary(ergebnis);
+				//Binary Ergebnis in Array umwandeln, sodass man auf einzelne stellen des Strings zugreifen kann
+				ergebnis_output = ergebnis_binary.split("");
+				ergebnis_output_save = ergebnis_binary.split("");
+				if(windowCounter == 6 || windowCounter == 12){
+					if(windowCounter == 6) {
+						arrow_1.visible = true;
+					} else if (windowCounter == 12) {
+						arrow_2.visible = true;
+					}
+					arrowNumberWindows[arrowNumberWindowCounter] = new lib.InterimWindow();
+					arrowNumberWindows[arrowNumberWindowCounter].x = x_position;
+					arrowNumberWindows[arrowNumberWindowCounter].y = y_position;
+					arrowNumberWindowMaker(arrowNumberWindows[arrowNumberWindowCounter], first_summand);
+					moveRight();
+				}
+				übertrag = ["0", "0", "0", "0", "0", "0", "0", "0"]; 
+				//Übertrag berechnen
+				for(p = first_summand.length-1; p >= 0; p--){
+					if(2 <= (parseInt(first_summand[p]) + parseInt(second_summand[p]) + parseInt(übertrag[p]))){
+						übertrag[p-1] = "1";
+					}
+				}
+				übertrag_output = übertrag;
+				//Schauen ob das Int-Ergebnis über 255 liegt, wenn ja das output Ergebnis entsprechend anpassen
+				if(ergebnis > 255) {
+					for(u = 8; u > 0; u--){
+						übertrag[u] = übertrag[u-1];
+					}
+					übertrag[0] = "1";
+					//Übertrag zwischenspeichern falls der Wert größer ist. Für die Ausgabe
+					übertrag_output = übertrag;
+					ergebnis_output.splice(0,1);
+					if(ergebnis_output[7] == "0" && übertrag[0] == "1"){
+						ergebnis_output[7] = übertrag[0];
+						übertrag = ["0", "0", "0", "0", "0", "0", "0", "1"]; 
+					} else {
+						übertrag = ["0", "0", "0", "0", "0", "0", "0", "1"]; 
+						for(p = ergebnis_output.length-1; p >= 0; p--){
+							if(2 == (parseInt(ergebnis_output[p]) + parseInt(übertrag[p]))){
+								übertrag[p-1] = "1";
+								ergebnis_output[p] = "0";
+							} else {
+								ergebnis_output[p] = "1";
+								break;
+							}
+						}
+					}
+					if(windowCounter == 5 || windowCounter == 11){
+						if(windowCounter == 5) {
+							übertrag_arrow_1.visible = true;
+						} else if (windowCounter == 11) {
+							übertrag_arrow_2.visible = true;
+						}
+						arrowNumberWindows[arrowNumberWindowCounter] = new lib.InterimWindow();
+						arrowNumberWindows[arrowNumberWindowCounter].x = x_position;
+						arrowNumberWindows[arrowNumberWindowCounter].y = y_position + y_position_mover;
+						arrowNumberWindowMaker(arrowNumberWindows[arrowNumberWindowCounter], ergebnis_output_save);
+						var remember_y = y_position;
+						moveRight();
+					} else {
+						y_position += y_position_mover;
+					}
+					windows[windowCounter] = new lib.ÜbertragWindow();
+					windows[windowCounter].x = x_position;
+					windows[windowCounter].y = y_position;
+					übertragWindowMaker(windows[windowCounter], ergebnis_output_save, übertrag);
+					übertrag_happend = true;
+					if(windowCounter != 6 && windowCounter != 12){
+						y_position -= y_position_mover;
+					} else {
+						moveLeft(remember_y);
+					}
+				}
+				windows[windowCounter] = new lib.CalcWindow();
+				windows[windowCounter].x = x_position;
+				windows[windowCounter].y = y_position;
+				if(übertrag_happend && (windowCounter == 6 || windowCounter == 12)){
+					moveRight(übertrag_happend);
+					übertrag_happend = false;
+				} else if (übertrag_happend){ 
+					y_position += (2*y_position_mover);
+					übertrag_happend = false;
+				} else {
+					y_position += y_position_mover;
+				}
+				//if(windowCounter == 6 && x_position 
+				if(classic_checksum.firstChild.checked && i == 0){
+					windowMaker(windows[windowCounter], "first", i, first_summand, second_summand, übertrag_output);
+				} else if (enhanced_checksum.firstChild.checked && i == 0) {
+					windowMaker(windows[windowCounter], "PID", i, first_summand, second_summand, übertrag_output);
+				} else {
+					windowMaker(windows[windowCounter], "normal", i, first_summand, second_summand, übertrag_output);
+				}
+				ergebnis = ergebnis_output.join("");
+				ergebnis = parseInt(ergebnis,2);
+			}
+			if(windowCounter == 6 || windowCounter == 12){
+				if(windowCounter == 6) {
+					arrow_1.visible = true;
+				} else if (windowCounter == 12) {
+					arrow_2.visible = true;
+				}
+				arrowNumberWindows[arrowNumberWindowCounter] = new lib.InterimWindow();
+				arrowNumberWindows[arrowNumberWindowCounter].x = x_position;
+				arrowNumberWindows[arrowNumberWindowCounter].y = y_position;
+				arrowNumberWindowMaker(arrowNumberWindows[arrowNumberWindowCounter], ergebnis_output);
+				moveRight();
+			}
+			übertrag_output = ["0", "0", "0", "0", "0", "0", "0", "0"]; 
+			windows[windowCounter] = new lib.CalcWindow();
+			windows[windowCounter].x = x_position;
+			windows[windowCounter].y = y_position;
+			y_position += y_position_mover;
+			windowMaker(windows[windowCounter], "inv", 0, ergebnis_output, ergebnis_output, übertrag_output);
+			for(i = 0; i < ergebnis_output.length; i++){
+				if(ergebnis_output[i] == "0"){
+					ergebnis_output[i] = "1";
+				} else if(ergebnis_output[i] == "1") {
+					ergebnis_output[i] = "0";
+				}
+			}
+			var inverted_ergebnis = ergebnis_output;
+			windows[windowCounter] = new lib.CheckWindow();
+			windows[windowCounter].x = x_position;
+			windows[windowCounter].y = y_position;
+			y_position += y_position_mover;
+			checksumWindow(windows[windowCounter], inverted_ergebnis);
+			inverted_ergebnis = inverted_ergebnis.join("");
+			bin_checksum.value = inverted_ergebnis;
+			hex_checksum.value = "0x" + binToHex(inverted_ergebnis);
+			dec_checksum.value = parseInt(inverted_ergebnis,2);
+			function moveRight(übertrag_happend){
+				if(!(übertrag_happend)){
+					x_position += 330;
+					y_position = 300;
+				} else {
+					x_position += 330;
+					y_position = 300 + y_position_mover;
+				}
+			}
+			function moveLeft(alt){
+				x_position -= 330;
+				y_position = alt;
+			}
+			function checksumWindow(window, endergebnis){
+				var summand_1_0_txt = window.summand_1_0_txt;
+				var summand_1_1_txt = window.summand_1_1_txt;
+				var summand_1_2_txt = window.summand_1_2_txt;
+				var summand_1_3_txt = window.summand_1_3_txt;
+				var summand_1_4_txt = window.summand_1_4_txt;
+				var summand_1_5_txt = window.summand_1_5_txt;
+				var summand_1_6_txt = window.summand_1_6_txt;
+				var summand_1_7_txt = window.summand_1_7_txt;
+				var summand_1_bits = [summand_1_0_txt, summand_1_1_txt, summand_1_2_txt, summand_1_3_txt, summand_1_4_txt, summand_1_5_txt, summand_1_6_txt, summand_1_7_txt];
+				for(r = 0; r < endergebnis.length; r++){
+					summand_1_bits[r].text = endergebnis[r];
+				}
+				stage.addChild(window);
+			}
+			function windowMaker(window, calc_type, byte_value_position, first_summand, second_summand, übertrag_display){
+				windowCounter++;
+				var klammer_1 = window.klammer_1_txt;
+				var klammer_2 = window.klammer_2_txt;
+				klammer_1.visible = false;
+				klammer_2.visible = false;
+				var summand_1_txt = window.summand_1_txt;
+				var summand_2_txt = window.summand_2_txt;
+				var übertrag_first_txt = window.übertrag_first_txt;
+				var übertrag_0_txt = window.übertrag_0_txt;
+				var übertrag_1_txt = window.übertrag_1_txt;
+				var übertrag_2_txt = window.übertrag_2_txt;
+				var übertrag_3_txt = window.übertrag_3_txt;
+				var übertrag_4_txt = window.übertrag_4_txt;
+				var übertrag_5_txt = window.übertrag_5_txt;
+				var übertrag_6_txt = window.übertrag_6_txt;
+				var übertrag_7_txt = window.übertrag_7_txt;
+				var übertrag_bits = [übertrag_first_txt, übertrag_0_txt, übertrag_1_txt, übertrag_2_txt, übertrag_3_txt, übertrag_4_txt, übertrag_5_txt, übertrag_6_txt, übertrag_7_txt]
+				var summand_1_0_txt = window.summand_1_0_txt;
+				var summand_1_1_txt = window.summand_1_1_txt;
+				var summand_1_2_txt = window.summand_1_2_txt;
+				var summand_1_3_txt = window.summand_1_3_txt;
+				var summand_1_4_txt = window.summand_1_4_txt;
+				var summand_1_5_txt = window.summand_1_5_txt;
+				var summand_1_6_txt = window.summand_1_6_txt;
+				var summand_1_7_txt = window.summand_1_7_txt;
+				var summand_1_bits = [summand_1_0_txt, summand_1_1_txt, summand_1_2_txt, summand_1_3_txt, summand_1_4_txt, summand_1_5_txt, summand_1_6_txt, summand_1_7_txt];
+				var summand_2_0_txt = window.summand_2_0_txt;
+				var summand_2_1_txt = window.summand_2_1_txt;
+				var summand_2_2_txt = window.summand_2_2_txt;
+				var summand_2_3_txt = window.summand_2_3_txt;
+				var summand_2_4_txt = window.summand_2_4_txt;
+				var summand_2_5_txt = window.summand_2_5_txt;
+				var summand_2_6_txt = window.summand_2_6_txt;
+				var summand_2_7_txt = window.summand_2_7_txt;
+				var summand_2_bits = [summand_2_0_txt, summand_2_1_txt, summand_2_2_txt, summand_2_3_txt, summand_2_4_txt, summand_2_5_txt, summand_2_6_txt, summand_2_7_txt];
+				for(r = 0; r < first_summand.length; r++){
+					summand_1_bits[r].text = first_summand[r];
+					summand_2_bits[r].text = second_summand[r];
+				}
+				if(calc_type == "first"){
+					summand_1_txt.text = "Data Byte " + (byte_value_position+1) + " :";
+					summand_2_txt.text = "Data Byte " + (byte_value_position+2) + " :";
+				} else if (calc_type == "PID") {
+					summand_1_txt.text = "PID :";
+					summand_1_txt.x += 57;
+					summand_2_txt.text = "Data Byte " + (byte_value_position+1) + " :";
+				} else if (calc_type == "normal"){
+					if(!(enhanced_checksum.firstChild.checked)){
+						summand_1_txt.text = "";
+						summand_2_txt.text = "Data Byte " + (byte_value_position+2) + " :";
+					} else {
+						summand_1_txt.text = "";
+						summand_2_txt.text = "Data Byte " + (byte_value_position+1) + " :";
+					}
+				} else if (calc_type == "inv"){
+					summand_1_txt.text = "";
+					summand_2_txt.x += 70;
+					summand_2_txt.y += 14;
+					summand_2_txt.text = "INV";
+					klammer_1.visible = true;
+					klammer_2.visible = true;
+					for(r = 0; r < first_summand.length; r++){
+						summand_2_bits[r].y += 14;
+					}
+				}
+				if(übertrag_display.length == 8){
+					übertrag_bits[0].visible = false;
+					for(z = 0; z < übertrag_display.length; z++){
+						if(übertrag_display[z] == "1") {
+							übertrag_bits[z+1].text = übertrag_display[z];
+						}			
+						else {
+							übertrag_bits[z+1].visible = false;
+						} 
+					}
+				} else if(übertrag_display.length == 9){
+					for(q = 0; q < übertrag_display.length; q++){
+						if(übertrag_display[q] == "1") {
+							übertrag_bits[q].text = übertrag_display[q];
+						}			
+						else {
+							übertrag_bits[q].visible = false;
+						}
+					}
+				}
+				stage.addChild(window);
+			}
+			function übertragWindowMaker(window, zwischenergebnis, übertrag){
+				windowCounter++;
+				var übertrag_first_txt = window.übertrag_first_txt;
+				var übertrag_0_txt = window.übertrag_0_txt;
+				var übertrag_1_txt = window.übertrag_1_txt;
+				var übertrag_2_txt = window.übertrag_2_txt;
+				var übertrag_3_txt = window.übertrag_3_txt;
+				var übertrag_4_txt = window.übertrag_4_txt;
+				var übertrag_5_txt = window.übertrag_5_txt;
+				var übertrag_6_txt = window.übertrag_6_txt;
+				var übertrag_bits = [übertrag_0_txt, übertrag_1_txt, übertrag_2_txt, übertrag_3_txt, übertrag_4_txt, übertrag_5_txt, übertrag_6_txt, übertrag_first_txt]
+				var summand_first_txt = window.summand_first_txt;
+				var summand_1_0_txt = window.summand_1_0_txt;
+				var summand_1_1_txt = window.summand_1_1_txt;
+				var summand_1_2_txt = window.summand_1_2_txt;
+				var summand_1_3_txt = window.summand_1_3_txt;
+				var summand_1_4_txt = window.summand_1_4_txt;
+				var summand_1_5_txt = window.summand_1_5_txt;
+				var summand_1_6_txt = window.summand_1_6_txt;
+				var summand_1_7_txt = window.summand_1_7_txt;
+				var summand_1_bits = [summand_first_txt, summand_1_0_txt, summand_1_1_txt, summand_1_2_txt, summand_1_3_txt, summand_1_4_txt, summand_1_5_txt, summand_1_6_txt, summand_1_7_txt];
+				for(l = 0; l < zwischenergebnis.length; l++){
+					summand_1_bits[l].text = zwischenergebnis[l];
+				}
+				for(a = 0; a < übertrag.length; a++){
+					if(übertrag[a] == "1") {
+						übertrag_bits[a].text = übertrag[a];
+					}			
+					else if(übertrag[a] == "0"){
+						übertrag_bits[a].visible = false;
+					}
+				}
+				stage.addChild(window);
+			}
+			function arrowNumberWindowMaker(window, arrow_number){
+				arrowNumberWindowCounter++;
+				var summand_1_first_txt = window.summand_1_first_txt;
+				var summand_1_0_txt = window.summand_1_0_txt;
+				var summand_1_1_txt = window.summand_1_1_txt;
+				var summand_1_2_txt = window.summand_1_2_txt;
+				var summand_1_3_txt = window.summand_1_3_txt;
+				var summand_1_4_txt = window.summand_1_4_txt;
+				var summand_1_5_txt = window.summand_1_5_txt;
+				var summand_1_6_txt = window.summand_1_6_txt;
+				var summand_1_7_txt = window.summand_1_7_txt;
+				var summand_1_bits = [summand_1_first_txt, summand_1_0_txt, summand_1_1_txt, summand_1_2_txt, summand_1_3_txt, summand_1_4_txt, summand_1_5_txt, summand_1_6_txt, summand_1_7_txt];
+				if(arrow_number.length == 8){
+					summand_1_bits[0].visible = false;
+					for(z = 0; z < arrow_number.length; z++){
+						if(arrow_number[z] == "1") {
+							summand_1_bits[z+1].text = arrow_number[z];
+						}			
+					}
+				} else if(arrow_number.length == 9){
+					for(q = 0; q < arrow_number.length; q++){
+						if(arrow_number[q] == "1") {
+							summand_1_bits[q].text = arrow_number[q];
+						}			
+					}
+				}
+				stage.addChild(window);
+			}
+			function calculatePID(id){
+				//XOR-Vergleiche um die Ausgabe zu errechnen für P0
+				id = id.reverse();
+				var xor_id0_id1 = id[0] ^ id[1];
+				var xor_id2_id4 = id[2] ^ id[4];
+				var xor_result3_p0 = xor_id0_id1 ^ xor_id2_id4;
+				var p0;
+				//XOR-Vergleiche um die Ausgabe zu errechnen für P1
+				var xor_id1_id3 = id[1] ^ id[3];
+				var xor_id4_id5 = id[4] ^ id[5];
+				var xor_result3_p1 = xor_id1_id3 ^ xor_id4_id5;
+				var p1;
+				//Endergebnis p0 berechnen
+				if(xor_result3_p0 == 1){
+					p0 = "1";
+				} else {
+					p0 = "0";
+				}
+				//Endergebnis p1 berechnen
+				if(xor_result3_p1 == 1){
+					p1 = "0";
+				} else {
+					p1 = "1";
+				}
+				id.reverse();
+				id[0] = p1;
+				id[1] = p0;
+				return id;
+			}
+		}
+		function decToBinary(dec){
+			var binary;
+			binary = parseInt(dec).toString(16);
+			binary = hex2Bin(binary);
+			if (binary.length < 8) {
+				for (o = binary.length; 8 > o; o++){
+					binary = "0" + binary;
+				}
+			}
+			return binary;
+		}
+		function binToHex(bin){
+			bin = parseInt(bin, 2);
+			bin = parseInt(bin).toString(16).toUpperCase();
+			return bin;
+		}
+		function windowCleaner(){
+			if(content_visible) {
+				arrow_1.visible = false;
+				arrow_2.visible = false;
+				übertrag_arrow_1.visible = false;
+				übertrag_arrow_2.visible = false;
+				bin_checksum.value = "";
+				hex_checksum.value = "";
+				dec_checksum.value = "";
+				for(i = 0; i < windows.length; i++){
+					if(windows[i] !== undefined){
+						stage.removeChild(windows[i]);
+					}
+				}
+				for(i = 0; i < arrowNumberWindows.length; i++){
+					if(arrowNumberWindows[i] !== undefined){
+						stage.removeChild(arrowNumberWindows[i]);
+					}
+				}
+			}
+			content_visible = false;
+		}
+		//Instruction Handling
+		var instruction = new lib.Anleitung();
+		var cursorX;
+		var cursorY;
+		var scale = stage.scaleX;
+		var offSetXInstr;
+		var offSetYInstr;
+		var titel_instruction = instruction.instructions_drag_mc.titlebar_mc;
+		var drag_instr = instruction.instructions_drag_mc;
+		var transparent_instr = instruction.transparent_mc;
+		var dragInstrBounds = drag_instr.nominalBounds;
+		var instruction_btn = this.graphic.instruction_btn;
+		var instruction_close_btn = instruction.instructions_drag_mc.close_btn;
+		var borderInstrLeft = 2;
+		var borderInstrTop = 2;
+		var borderInstrBottom = canvas.height/scale - dragInstrBounds.height;
+		var borderInstrRight = canvas.width/scale - dragInstrBounds.width + 2;
+		//Get mouse position
+		document.onmousemove = function(e){
+		    cursorX = e.pageX;
+		    cursorY = e.pageY;
+		}
+		//Make everything behind transparent inaktiv
+		transparent_instr.addEventListener("mouseover", function(){
+		      //Do nothing, just get focus
+		});
+		//Instruction Configuration
+		instruction.instructions_drag_mc.close_btn.cursor = "pointer";
+		var classic_fake_txt = this.classic_fake_txt;
+		var classic_point = this.classic_point;
+		var classic_active_faker = this.classic_active_faker;
+		var enhanced_fake_txt = this.enhanced_fake_txt;
+		var enhanced_point = this.enhanced_point;
+		var enhanced_active_faker = this.enhanced_active_faker;
+		var hex_fake_txt = this.hex_fake_txt;
+		var hex_point = this.hex_point;
+		var hex_active_faker = this.hex_active_faker;
+		var dez_fake_txt = this.dez_fake_txt;
+		var dez_point = this.dez_point;
+		var dez_active_faker = this.dez_active_faker;
+		var bin_fake_txt = this.bin_fake_txt;
+		var bin_point = this.bin_point;
+		var bin_active_faker = this.bin_active_faker;
+		classic_fake_txt.visible = false;
+		classic_point.visible = false;
+		classic_active_faker.visible = false;
+		enhanced_fake_txt.visible = false;
+		enhanced_point.visible = false;
+		enhanced_active_faker.visible = false;
+		hex_fake_txt.visible = false;
+		hex_point.visible = false;
+		hex_active_faker.visible = false;
+		dez_fake_txt.visible = false;
+		dez_point.visible = false;
+		dez_active_faker.visible = false;
+		bin_fake_txt.visible = false;
+		bin_point.visible = false;
+		bin_active_faker.visible = false;
+		var fake_boxes = this.fake_boxes;
+		var fake_value_1 = fake_boxes.value_1;
+		var fake_value_2 = fake_boxes.value_2;
+		var fake_value_3 = fake_boxes.value_3;
+		var fake_value_4 = fake_boxes.value_4;
+		var fake_value_5 = fake_boxes.value_5;
+		var fake_value_6 = fake_boxes.value_6;
+		var fake_value_7 = fake_boxes.value_7;
+		var fake_value_8 = fake_boxes.value_8;
+		var fake_value_9 = fake_boxes.value_9;
+		var fake_checksum_bin_value = fake_boxes.checksum_bin_fake;
+		var fake_checksum_hex_value = fake_boxes.checksum_hex_fake;
+		var fake_checksum_dec_value = fake_boxes.checksum_dec_fake;
+		var fake_values = [fake_value_1, fake_value_2, fake_value_3, fake_value_4, fake_value_5, fake_value_6, fake_value_7, fake_value_8, fake_value_9] 
+		fake_boxes.visible = false;
+		//Open-Button Instruction
+		instruction_btn.addEventListener("click", function(){
+			for(i = 0; i < input_boxes.length; i++){
+				marker[i].style.zIndex = -1;
+				if(hexa_radio.firstChild.checked){
+					fake_values[i].text = "0x" + input_boxes[i].value;
+				} else {
+					fake_values[i].text = input_boxes[i].value;
+				}
+			}
+			fake_checksum_bin_value.text = bin_checksum.value;
+			fake_checksum_hex_value.text = hex_checksum.value;
+			fake_checksum_dec_value.text = dec_checksum.value;
+			bin_checksum.style.zIndex = -1;
+			dec_checksum.style.zIndex = -1;
+			hex_checksum.style.zIndex = -1;
+			hexa_radio.style.zIndex = -1;
+			bin_radio.style.zIndex = -1;
+			dezi_radio.style.zIndex = -1;
+			enhanced_checksum.style.zIndex = -1;
+			classic_checksum.style.zIndex = -1;
+			fake_boxes.visible = true;
+			classic_fake_txt.visible = true;
+			classic_point.visible = true;
+			enhanced_fake_txt.visible = true;
+			enhanced_point.visible = true;
+			hex_fake_txt.visible = true;
+			hex_point.visible = true;
+			dez_fake_txt.visible = true;
+			dez_point.visible = true;
+			bin_fake_txt.visible = true;
+			bin_point.visible = true;
+			if(bin_radio.firstChild.checked){
+				bin_active_faker.visible = true;
+			} else if(hexa_radio.firstChild.checked){
+				hex_active_faker.visible = true;
+			} else if(dezi_radio.firstChild.checked){
+				dez_active_faker.visible = true;
+			}
+			if(classic_checksum.firstChild.checked){
+				classic_active_faker.visible = true;
+			} else if(enhanced_checksum.firstChild.checked){
+				enhanced_active_faker.visible = true;
+			}
+			//stage.addChild(fake_box_identifier);
+			//stage.addChild(identifier_faker);
+			stage.addChild(instruction);	
+		});
+		//Close-Button Instruction
+		instruction_close_btn.addEventListener("click", function(){
+			for(i = 0; i < input_boxes.length; i++){
+				marker[i].style.zIndex = 1;
+			}
+			bin_checksum.style.zIndex = 1;
+			dec_checksum.style.zIndex = 1;
+			hex_checksum.style.zIndex = 1;
+			hexa_radio.style.zIndex = 1;
+			bin_radio.style.zIndex = 1;
+			dezi_radio.style.zIndex = 1;
+			enhanced_checksum.style.zIndex = 1;
+			classic_checksum.style.zIndex = 1;
+			fake_boxes.visible = false;
+			classic_fake_txt.visible = false;
+			classic_point.visible = false;
+			enhanced_fake_txt.visible = false;
+			enhanced_point.visible = false;
+			hex_fake_txt.visible = false;
+			hex_point.visible = false;
+			dez_fake_txt.visible = false;
+			dez_point.visible = false;
+			bin_fake_txt.visible = false;
+			bin_point.visible = false;
+			hex_active_faker.visible = false;
+			dez_active_faker.visible = false;
+			bin_active_faker.visible = false;
+			classic_active_faker.visible = false;
+			enhanced_active_faker.visible = false;
+			stage.removeChild(instruction);
+		});
+		instruction_close_btn.addEventListener("mouseover", function(){
+			instruction_close_btn.gotoAndStop(1);
+		});
+		instruction_close_btn.addEventListener("mouseout", function(){
+			instruction_close_btn.gotoAndStop(0);
+		});
+		//Cursor Setup
+		titel_instruction.cursor = "move";
+		//Drag even when cursor is still clicked outside of the stage
+		stage.mouseMoveOutside = true;
+		//Calculate x-Offset/y-Offset for Instruction
+		titel_instruction.addEventListener("mousedown", function(){
+			offSetXInstr = drag_instr.x - cursorX;
+			offSetYInstr = drag_instr.y - cursorY;
+		});
+		//Drag-Function for instruction
+		titel_instruction.on("pressmove", function(evt){
+			var scale = stage.scaleX;
+			transparent_instr.visible=false;
+			//Block "jump"-behaviour in x-direction
+			drag_instr.x = (evt.stageX / scale + offSetXInstr) ;
+			//Block "jump"-behaviour in y-direction
+			drag_instr.y = (evt.stageY / scale + offSetYInstr) ;
+			//Border-Handling
+			if(drag_instr.x >= borderInstrRight) 
+				drag_instr.x = borderInstrRight;
+			if(drag_instr.x <= borderInstrLeft)
+				drag_instr.x = borderInstrLeft;
+			if(drag_instr.y >= borderInstrBottom)
+				drag_instr.y = borderInstrBottom;
+			if(drag_instr.y <= borderInstrTop)
+				drag_instr.y = borderInstrTop;
+		});
+		titel_instruction.on("pressup", function(evt){
+			transparent_instr.visible=true;
+		});
+	}
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	// fake_stuff
+	this.fake_boxes = new lib.fake_boxes();
+	this.fake_boxes.name = "fake_boxes";
+	this.fake_boxes.setTransform(572.3,197.3,1,1,0,0,0,422.9,55.9);
+	this.enhanced_active_faker = new lib.active_button_faker();
+	this.enhanced_active_faker.name = "enhanced_active_faker";
+	this.enhanced_active_faker.setTransform(300.1,154.05,1,1,0,0,0,3.5,3.5);
+	this.enhanced_point = new lib.hex_point();
+	this.enhanced_point.name = "enhanced_point";
+	this.enhanced_point.setTransform(300.5,155,0.7801,0.7801,0,0,0,7.5,8.2);
+	this.enhanced_fake_txt = new cjs.Text("Enhanced Checksum", "normal 400 13px 'Roboto'");
+	this.enhanced_fake_txt.name = "enhanced_fake_txt";
+	this.enhanced_fake_txt.lineHeight = 19;
+	this.enhanced_fake_txt.lineWidth = 179;
+	this.enhanced_fake_txt.parent = this;
+	this.enhanced_fake_txt.setTransform(311,149.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.enhanced_fake_txt);
+	}
+	this.classic_active_faker = new lib.active_button_faker();
+	this.classic_active_faker.name = "classic_active_faker";
+	this.classic_active_faker.setTransform(155.1,154.05,1,1,0,0,0,3.5,3.5);
+	this.classic_point = new lib.hex_point();
+	this.classic_point.name = "classic_point";
+	this.classic_point.setTransform(155.5,155,0.7801,0.7801,0,0,0,7.5,8.2);
+	this.classic_fake_txt = new cjs.Text("Classic Checksum", "normal 400 13px 'Roboto'");
+	this.classic_fake_txt.name = "classic_fake_txt";
+	this.classic_fake_txt.lineHeight = 19;
+	this.classic_fake_txt.lineWidth = 127;
+	this.classic_fake_txt.parent = this;
+	this.classic_fake_txt.setTransform(166,149.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.classic_fake_txt);
+	}
+	this.bin_active_faker = new lib.active_button_faker();
+	this.bin_active_faker.name = "bin_active_faker";
+	this.bin_active_faker.setTransform(611,120.3,1,1,0,0,0,3.5,3.5);
+	this.dez_active_faker = new lib.active_button_faker();
+	this.dez_active_faker.name = "dez_active_faker";
+	this.dez_active_faker.setTransform(530.5,120.3,1,1,0,0,0,3.5,3.5);
+	this.hex_active_faker = new lib.active_button_faker();
+	this.hex_active_faker.name = "hex_active_faker";
+	this.hex_active_faker.setTransform(420.75,120.3,1,1,0,0,0,3.5,3.5);
+	this.bin_point = new lib.hex_point();
+	this.bin_point.name = "bin_point";
+	this.bin_point.setTransform(611.25,121.25,0.7801,0.7801,0,0,0,7.5,8.2);
+	this.bin_fake_txt = new cjs.Text("Binär", "normal 400 13px 'Roboto'", "#FFFFFF");
+	this.bin_fake_txt.name = "bin_fake_txt";
+	this.bin_fake_txt.lineHeight = 19;
+	this.bin_fake_txt.lineWidth = 80;
+	this.bin_fake_txt.parent = this;
+	this.bin_fake_txt.setTransform(621.75,116);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.bin_fake_txt);
+	}
+	this.dez_point = new lib.hex_point();
+	this.dez_point.name = "dez_point";
+	this.dez_point.setTransform(530.85,121.25,0.7801,0.7801,0,0,0,7.5,8.2);
+	this.dez_fake_txt = new cjs.Text("Dezimal", "normal 400 13px 'Roboto'", "#FFFFFF");
+	this.dez_fake_txt.name = "dez_fake_txt";
+	this.dez_fake_txt.lineHeight = 19;
+	this.dez_fake_txt.lineWidth = 80;
+	this.dez_fake_txt.parent = this;
+	this.dez_fake_txt.setTransform(541.35,116);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.dez_fake_txt);
+	}
+	this.hex_point = new lib.hex_point();
+	this.hex_point.name = "hex_point";
+	this.hex_point.setTransform(421.15,121.25,0.7801,0.7801,0,0,0,7.5,8.2);
+	this.hex_fake_txt = new cjs.Text("Hexadezimal", "normal 400 13px 'Roboto'", "#FFFFFF");
+	this.hex_fake_txt.name = "hex_fake_txt";
+	this.hex_fake_txt.lineHeight = 19;
+	this.hex_fake_txt.lineWidth = 80;
+	this.hex_fake_txt.parent = this;
+	this.hex_fake_txt.setTransform(431.65,116);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.hex_fake_txt);
+	}
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.hex_fake_txt},{t:this.hex_point},{t:this.dez_fake_txt},{t:this.dez_point},{t:this.bin_fake_txt},{t:this.bin_point},{t:this.hex_active_faker},{t:this.dez_active_faker},{t:this.bin_active_faker},{t:this.classic_fake_txt},{t:this.classic_point},{t:this.classic_active_faker},{t:this.enhanced_fake_txt},{t:this.enhanced_point},{t:this.enhanced_active_faker},{t:this.fake_boxes}]}).wait(1));
+	// content
+	this.graphic_mc = new lib.graphic_mc();
+	this.graphic_mc.name = "graphic_mc";
+	this.graphic_mc.setTransform(430,160.5,1,1,0,0,0,400,50.5);
+	this.timeline.addTween(cjs.Tween.get(this.graphic_mc).wait(1));
+	// framework
+	this.graphic = new lib.header_muli_mc();
+	this.graphic.name = "graphic";
+	this.graphic.setTransform(342.5,52.8,1,1,0,0,0,342.5,52.8);
+	this.text = new cjs.Text("© 2010-2017. Vector Informatik GmbH. All rights reserved. Any distribution or copying is subject to prior written approval by Vector. V2.0", "normal 400 10px 'Roboto'", "#848B8E");
+	this.text.lineHeight = 13;
+	this.text.lineWidth = 796;
+	this.text.parent = this;
+	this.text.setTransform(32,754.75);
+	if(!lib.properties.webfonts['Roboto']) {
+		lib.webFontTxtInst['Roboto'] = lib.webFontTxtInst['Roboto'] || [];
+		lib.webFontTxtInst['Roboto'].push(this.text);
+	}
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.text},{t:this.graphic}]}).wait(1));
+	// White_Background
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#848B8E").ss(1,1,1).p("EhRPg8JMCifAAAMAAAB4TMiifAAAg");
+	this.shape.setTransform(520,385);
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#FFFFFF").s().p("EhRPA8KMAAAh4TMCifAAAMAAAB4Tg");
+	this.shape_1.setTransform(520,385);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
+	this._renderFirstFrame();
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(519,384,522,387);
+// library properties:
+lib.properties = {
+	id: 'FA538225FF0F70479F0731685DDD7FA4',
+	width: 1040,
+	height: 770,
+	fps: 30,
+	color: "#FFFFFF",
+	opacity: 1.00,
+	webfonts: {},
+	manifest: [],
+	preloads: []
+};
+// bootstrap callback support:
+(lib.Stage = function(canvas) {
+	createjs.Stage.call(this, canvas);
+}).prototype = p = new createjs.StageGL();
+p.setAutoPlay = function(autoPlay) {
+	this.tickEnabled = autoPlay;
+}
+p.play = function() { this.tickEnabled = true; this.getChildAt(0).gotoAndPlay(this.getTimelinePosition()) }
+p.stop = function(ms) { if(ms) this.seek(ms); this.tickEnabled = false; }
+p.seek = function(ms) { this.tickEnabled = true; this.getChildAt(0).gotoAndStop(lib.properties.fps * ms / 1000); }
+p.getDuration = function() { return this.getChildAt(0).totalFrames / lib.properties.fps * 1000; }
+p.getTimelinePosition = function() { return this.getChildAt(0).currentFrame / lib.properties.fps * 1000; }
+an.bootcompsLoaded = an.bootcompsLoaded || [];
+if(!an.bootstrapListeners) {
+	an.bootstrapListeners=[];
+}
+an.bootstrapCallback=function(fnCallback) {
+	an.bootstrapListeners.push(fnCallback);
+	if(an.bootcompsLoaded.length > 0) {
+		for(var i=0; i<an.bootcompsLoaded.length; ++i) {
+			fnCallback(an.bootcompsLoaded[i]);
+		}
+	}
+};
+an.compositions = an.compositions || {};
+an.compositions['FA538225FF0F70479F0731685DDD7FA4'] = {
+	getStage: function() { return exportRoot.stage; },
+	getLibrary: function() { return lib; },
+	getSpriteSheet: function() { return ss; },
+	getImages: function() { return img; }
+};
+an.compositionLoaded = function(id) {
+	an.bootcompsLoaded.push(id);
+	for(var j=0; j<an.bootstrapListeners.length; j++) {
+		an.bootstrapListeners[j](id);
+	}
+}
+an.getComposition = function(id) {
+	return an.compositions[id];
+}
+an.makeResponsive = function(isResp, respDim, isScale, scaleType, domContainers) {		
+	var lastW, lastH, lastS=1;		
+	window.addEventListener('resize', resizeCanvas);		
+	resizeCanvas();		
+	function resizeCanvas() {			
+		var w = lib.properties.width, h = lib.properties.height;			
+		var iw = window.innerWidth, ih=window.innerHeight;			
+		var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+		if(isResp) {                
+			if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+				sRatio = lastS;                
+			}				
+			else if(!isScale) {					
+				if(iw<w || ih<h)						
+					sRatio = Math.min(xRatio, yRatio);				
+			}				
+			else if(scaleType==1) {					
+				sRatio = Math.min(xRatio, yRatio);				
+			}				
+			else if(scaleType==2) {					
+				sRatio = Math.max(xRatio, yRatio);				
+			}			
+		}			
+		domContainers[0].width = w * pRatio * sRatio;			
+		domContainers[0].height = h * pRatio * sRatio;			
+		domContainers.forEach(function(container) {				
+			container.style.width = w * sRatio + 'px';				
+			container.style.height = h * sRatio + 'px';			
+		});			
+		stage.scaleX = pRatio*sRatio;			
+		stage.scaleY = pRatio*sRatio;			
+		lastW = iw; lastH = ih; lastS = sRatio;            
+		stage.tickOnUpdate = false;            
+		stage.update();            
+		stage.tickOnUpdate = true;		
+	}
+}
+})(createjs = createjs||{}, AdobeAn = AdobeAn||{});
+var createjs, AdobeAn;
+</script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("FA538225FF0F70479F0731685DDD7FA4");
+	var lib=comp.getLibrary();
+	try {
+		if(!(typeof gFontsFamilies === 'undefined' || gFontsFamilies === null))
+			LoadGFonts(gFontsFamilies, comp);		
+		if(!(typeof totalTypekitFonts === 'undefined' || totalTypekitFonts === null)) {			
+			var typekitObject = {type: 'Typekit', loadedFonts: 0, totalFonts: totalTypekitFonts, callOnLoad: lib.tfontAvailable};		
+			Typekit.load({
+			async: true,
+			'fontactive': function(family) {
+				isFontAvailable(family, typekitObject);
+				}
+			});
+		}
+	} catch(e) {};
+	handleComplete({},comp);
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	exportRoot = new lib.LIN_62_IGR_CRCComputer_EN();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+<style>
+/* Roboto normal is MarkWeb normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url(https://elearning.vector.com/resources/fonts/MarkWeb.woff) format('woff');
+  unicode-range: U+0-FFFF;
+}
+/* Roboto light italic is MarkWeb light italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 100;
+  src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url(https://elearning.vector.com/resources/fonts/MarkWeb-LightItalic.woff) format('woff');
+  unicode-range: U+0-FFFF;
+}
+/* Roboto light is MarkWeb light */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://elearning.vector.com/resources/fonts/MarkWeb-Light.woff) format('woff');
+  unicode-range: U+0-FFFF;
+}
+/* Roboto medium is MarkWeb medium */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://elearning.vector.com/resources/fonts/MarkWeb-Medium.woff) format('woff');
+  unicode-range: U+0-FFFF;
+}
+/* Roboto medium italic is MarkWeb medium italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(https://elearning.vector.com/resources/fonts/MarkWeb-MediumItalic.woff) format('woff');
+  unicode-range: U+0-FFFF;
+}
+/* Roboto bold is MarkWeb bold */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://elearning.vector.com/resources/fonts/MarkWeb-Bold.woff) format('woff');
+  unicode-range: U+0-FFFF;
+}
+/* Roboto bold italic is MarkWeb bold italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://elearning.vector.com/resources/fonts/MarkWeb-BoldItalic.woff) format('woff');
+  unicode-range: U+0-FFFF;
+}
+/* Roboto black is MarkWeb bold */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'), url(https://elearning.vector.com/resources/fonts/MarkWeb-Bold.woff) format('woff');
+  unicode-range: U+0-FFFF;
+}
+/* Roboto black italic is MarkWeb italic bold */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://elearning.vector.com/resources/fonts/MarkWeb-BoldItalic.woff) format('woff');
+  unicode-range: U+0-FFFF;
+}
+/* Roboto italic is MarkWeb italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://elearning.vector.com/resources/fonts/MarkWeb-Italic.woff) format('woff');
+  unicode-range: U+0-FFFF;
+}
+/* Roboto regular is MarkWeb normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://elearning.vector.com/resources/fonts/MarkWeb.woff) format('woff');
+  unicode-range: U+0-FFFF;
+}
+</style>
+</head>
+<body onload="init();" style="margin:0px;">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1040px; height:770px">
+		<canvas id="canvas" width="1040" height="770" style="position: absolute; display: block; background-color: rgb(255, 255, 255); width: 1040px; height: 770px; cursor: pointer;"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1040px; height:770px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+
+<input type="text" id="bin_checksum" size="5" disabled="" style="font-size: 14px; width: 120px; top: 140px; left: 870px; text-align: left; position: absolute;"><input type="text" id="hex_checksum" size="5" disabled="" style="font-size: 14px; width: 120px; top: 170px; left: 870px; text-align: left; position: absolute;"><input type="text" id="dec_checksum" size="5" disabled="" style="font-size: 14px; width: 120px; top: 200px; left: 870px; text-align: left; position: absolute;"><label style="color: black; font-size: 13px; top: 144px; left: 290px; font-family: Roboto; position: absolute;"><input type="radio" name="checksum_type" value="enhanced">Enhanced Checksum</label><label style="color: black; font-size: 13px; top: 144px; left: 145px; font-family: Roboto; position: absolute;"><input type="radio" name="checksum_type" value="classic">Classic Checksum</label><label style="color: white; font-size: 13px; top: 110px; left: 520px; font-family: Roboto; position: absolute;"><input type="radio" name="number_type" value="dezi">Decimal</label><label style="color: white; font-size: 13px; top: 110px; left: 410px; font-family: Roboto; position: absolute;"><input type="radio" name="number_type" value="hexa">Hexadecimal</label><label style="color: white; font-size: 13px; top: 110px; left: 600px; font-family: Roboto; position: absolute;"><input type="radio" name="number_type" value="bin">Binary</label><span id="identifier_hex_marker" style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 170px; left: 150px; position: absolute; color: rgb(137, 109, 109);">0x<input type="text" id="identifier" size="5" disabled="" style="background-color: rgb(218, 222, 225); font-size: 14px; width: 55px; text-align: left; border: 0px; position: relative; color: rgb(137, 109, 109);"></span><span id="data_field_1_hex_marker" style="background-color: white; font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 201px; left: 150px; position: absolute;">0x<input id="data_field_1" type="text" size="5" style="background-color: white; border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative;"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 201px; left: 250px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_2" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 201px; left: 350px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_3" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 201px; left: 450px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_4" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 232px; left: 150px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_5" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 232px; left: 250px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_6" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 232px; left: 350px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_7" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 232px; left: 450px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_8" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><input type="text" id="bin_checksum" size="5" disabled="" style="font-size: 14px; width: 120px; top: 140px; left: 870px; text-align: left; position: absolute;"><input type="text" id="hex_checksum" size="5" disabled="" style="font-size: 14px; width: 120px; top: 170px; left: 870px; text-align: left; position: absolute;"><input type="text" id="dec_checksum" size="5" disabled="" style="font-size: 14px; width: 120px; top: 200px; left: 870px; text-align: left; position: absolute;"><label style="color: black; font-size: 13px; top: 144px; left: 290px; font-family: Roboto; position: absolute;"><input type="radio" name="checksum_type" value="enhanced">Enhanced Checksum</label><label style="color: black; font-size: 13px; top: 144px; left: 145px; font-family: Roboto; position: absolute;"><input type="radio" name="checksum_type" value="classic">Classic Checksum</label><label style="color: white; font-size: 13px; top: 110px; left: 520px; font-family: Roboto; position: absolute;"><input type="radio" name="number_type" value="dezi">Decimal</label><label style="color: white; font-size: 13px; top: 110px; left: 410px; font-family: Roboto; position: absolute;"><input type="radio" name="number_type" value="hexa">Hexadecimal</label><label style="color: white; font-size: 13px; top: 110px; left: 600px; font-family: Roboto; position: absolute;"><input type="radio" name="number_type" value="bin">Binary</label><span id="identifier_hex_marker" style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 170px; left: 150px; position: absolute; color: rgb(137, 109, 109);">0x<input type="text" id="identifier" size="5" disabled="" style="background-color: rgb(218, 222, 225); font-size: 14px; width: 55px; text-align: left; border: 0px; position: relative; color: rgb(137, 109, 109);"></span><span id="data_field_1_hex_marker" style="background-color: white; font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 201px; left: 150px; position: absolute;">0x<input id="data_field_1" type="text" size="5" style="background-color: white; border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative;"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 201px; left: 250px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_2" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 201px; left: 350px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_3" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 201px; left: 450px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_4" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 232px; left: 150px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_5" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 232px; left: 250px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_6" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 232px; left: 350px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_7" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span><span style="background-color: rgb(218, 222, 225); font-size: 14px; font-family: Roboto; border: 1px inset rgb(204, 204, 204); top: 232px; left: 450px; position: absolute; color: rgb(137, 109, 109);">0x<input id="data_field_8" type="text" size="5" disabled="" style="background-color: rgb(218, 222, 225); border: 0px; font-size: 14px; width: 55px; text-align: left; position: relative; color: rgb(137, 109, 109);"></span></body></html>
