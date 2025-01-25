@@ -1,5 +1,12 @@
 ### CAN (Controller Area Network)
 
+##### Content
+
+What you get cover and understand after these chapter
+
+- ..
+- ..
+
 #### Why we need CAN Controller?
 
 increasing #of ECUs(complexity of ECUs communication)
@@ -72,6 +79,8 @@ Conventional Network
 - These values according to length, speed, power,etc.
 
 `Note:` What if network nodes has different CAN types? - The network engineer adjust its logic range
+
+![CAN](../Notes/imgs/CAN27.png)
 
 #### CAN protocol principles
 
@@ -225,7 +234,7 @@ that punish the transmitter and receiver when error error sends with (TEC, REC) 
 
 ```
 inituation:
-اونر عايز يقول للنودز اهدوا عشان انا مش بايظ بس مش ملاحق عليكوا
+اونر عايز يقول للنودز اهدوا انا مش بايظ بس مش ملاحق عليكوا
 ```
 
 - 6 dominent bits
@@ -307,8 +316,147 @@ Propagation delay
 فعشان كده الجزء بتاع الداتا مفيهوش الديلاي دا او اقل يعني فبنزود فيه السرعه عادي
 ```
 
-![CAN](../Notes/imgs/CAN21.JPG.JPG)
+![CAN](../Notes/imgs/CAN21.JPG)
+
+- `Question:` Why we don't have Remote Frame in CAN_FD?
+  - because it doesn't contain Data, and that's why we create CAN_FD(increase data size), so it doesn't make sense
+
+---
+
+### CAN Driver Implementation
+
+our nodes: ATmega32(HOST) with MCP2515 (Classical CAN Controller)
+![CAN](../Notes/imgs/CAN22.JPG)
+![CAN](../Notes/imgs/CAN28.png)
+![CAN](../Notes/imgs/CAN29.png)
+
+#### Bit Stuffing
+
+![CAN](../Notes/imgs/CAN23.JPG)
+
+#### As we know CAN is Asynchronous Protocol, So how CAN handling communication timing ?
+
+#### Bit Timming
+
+- AKA `Bit rate` or `Nominal bit rate`.
+- Bit timing is the count of time Quanta
+- (tq,a basic unit of bit time) required to carry a single bit(i.e tour of a bit on CAN bus from writing to reading) on CAN Bus
+
+- As per CAN standard CAN supports bit-rate up to 1Mbps.
+  - it all depends on the CAN network length.
+- bit rate can be configured individually for each CAN node connected on CAN network
+
+![CAN](../Notes/imgs/CAN26.JPG)
+
+- a bit time is divided into 4 segments and each segment has some specific programmable number of time quanta(tq)
+
+1. Synchronization Segment (Tsync_seg)
+2. Propagation Segment (Tprop_seg)
+3. Phase Segment 1(Tphase_seg1)
+4. Phase Segment 2(Tphase_seg2)
+
+- The `oscillator frequencies` of Nodes(`ECUs`) have some `instability` because of some `environmental factors` which can cause `synchronization error`
+  - but every `Node` is configured itself to maintain `its bit synchronization` by `adjusting` `bit time` if the `frequency deviation` is within `its tolerance limit`.
+
+| Segments    |   Value   |                        Description                        |
+| :---------- | :-------: | :-------------------------------------------------------: |
+| Tsync_seg   |   1 tq    |                           Fixed                           |
+| Tprop_seg   | [1..8] tq |  Programmable.(Adjust according to physical delay time)   |
+| Tphase_seg1 | [1..8] tq | Programmable.(Lengthened temporarily for synchronization) |
+| Tphase_seg2 | [1..8] tq | Programmable.(Shortened temporarily for synchronization)  |
+
+##### Time Quanta(Tq)
+
+```c
+tq = BRP / fsys
+// BRP = Baud Rate Prescaler
+// fsys = MCU system Clock(typically =Fosc)
+```
+
+#### synchronization segment
+
+```
+محتاجين الاشاره تقع فيها
+```
+
+- `observation:` CAN Bit timing like baud rate in UART
+
+##### Bit Rate Calculation Examples
+
+`Q`. Calculate Required Time Quanta to achieve 500kbps baud rate if the system clock is 40mhz and CAN clock divider is 4.
+
+```c
+CAN clock(fcan) = 40 / 4 = 10 MHz
+
+time Quanta(tq) = 1 / fcan = 1 / 10 = 100ns
+
+bit rate = 500kbps
+
+bit time = 1 / 500kbps = 2us
+
+no of tq = 2us / 100ns = 20tq.
+```
+
+`Q`. Configure TSEG1 and TSEG2 to set sampling at 80% of a bit time.
+
+```c
+(Tsync_seg+TSEG1) / (Tsync_seg + TSEG1 + TSEG2) = 80%
+
+as we calculated above: bit time = Tsync_seg+TSEG1+TSEG2=20tq
+
+so , (1 + TSEG1) / (20) = 80%
+
+TSEG1 = 16 - 1 = 15
+
+so TSEG2 = 20 - 1 - 15 = 4
+
+so final values are :
+
+Tsync_seg = 1(fixed)
+
+TSEG1 = 15
+
+TSEG2 = 4
+```
+
+##### Bit timing Registers
+
+CNF1, CNF2, CNF3
+SJW: Synchronization jump width (sample point shift by quanta)
+
+##### SPI clock polarity / clock phase
+
+is very important to make CAN IDLE edge(falling edge)
+
+#### CAN modes of operations
+
+differs from CAN controller to other.
+in MCP2515
+
+1. configuration mode
+2. normal mode
+3. sleep mode
+4. listen-only mode
+5. loopback mode
+
+#### Actual Frame Format
+
+![CAN](../Notes/imgs/CAN25.JPG)
+
+#### CAN Transmitter and Receiver APIs
+
+![CAN](../Notes/imgs/CAN24.JPG)
+
+- **note**: priority in CAN protocol depends on message ID but in MCP2515 sets in buffer
+- in CAN receiver: clear flag(INT pin)
+
+from MCP2515 Datasheet: SPI Interface
 
 #### Resources
 
 [can-protocol-introduction](https://medium.com/@mohammednumeir13/can-protocol-introduction-9544eacddfd0)
+[arduino-module-tutorial](https://lastminuteengineers.com/mcp2515-can-module-arduino-tutorial/)
+[can-protocol-bit-timing-and-calculation ](https://embedclogic.com/can-protocol/can-protocol-bit-timing-and-calculation/)
+
+[Arduino-MCP2515_Lib](https://github.com/107-systems/107-Arduino-MCP2515)
+[arduino-CAN_lib](https://github.com/sandeepmistry/arduino-CAN)
